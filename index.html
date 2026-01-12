@@ -1,184 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-MY">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 Johor Best EV Hotels & Charging Guide | 柔佛 EV 充电酒店推荐</title>
-    <meta name="description" content="Top 5 Hotels in JB & Desaru with EV Charging Stations. Comprehensive guide for Tesla, BYD & Proton e.MAS owners.">
-
+    
+    <title>2026 柔佛新山 EV 充电酒店指南 | Johor EV-Friendly Hotels</title>
+    <meta name="description" content="2026最新推荐！新山(JB)拥有最佳 EV 充电设施的酒店。Amari, KSL, St. Giles 充电桩实测。特斯拉/BYD 车主必看！">
+    <meta name="keywords" content="Johor EV Hotel, JB EV Charging, 新山充电桩酒店, Amari Johor Bahru, KSL Resort, St Giles Southkey, 马来西亚电动车旅行">
+    
     <style>
-        /* --- 页面基础样式 --- */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* --- 黑金高级风 (Dark Luxury) --- */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #1a1a1a; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 640px; margin: 0 auto; background: #242424; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
         
-        /* --- 标题样式 --- */
-        header { text-align: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { color: #2c3e50; margin-bottom: 5px; font-size: 22px; }
-        .subtitle { color: #7f8c8d; font-size: 0.9em; margin-top: 0; }
-        .intro { color: #555; font-size: 1em; margin-top: 15px; }
+        /* --- 头部 --- */
+        header { background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 50px 20px; text-align: center; color: #d4af37; border-bottom: 2px solid #d4af37; }
+        h1 { margin: 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; }
+        .subtitle { font-size: 14px; color: #aaa; margin-top: 10px; font-weight: 300; }
+
+        /* --- 列表 --- */
+        .hotel-list { padding: 30px 20px; }
+        .card { background: #2d2d2d; border-radius: 12px; overflow: hidden; margin-bottom: 25px; border: 1px solid #333; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); border-color: #d4af37; }
         
-        /* --- 酒店卡片样式 --- */
-        .hotel-card { border: 1px solid #eee; border-radius: 10px; padding: 20px; margin-bottom: 30px; background: #fff; }
-        .hotel-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; background-color: #eee; }
-        h2 { color: #2980b9; margin-top: 0; font-size: 20px; margin-bottom: 5px; }
-        .location-tag { background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.7em; color: #555; vertical-align: middle; margin-left: 5px; }
+        .card-img { width: 100%; height: 180px; object-fit: cover; filter: brightness(0.9); }
+        .card-body { padding: 20px; }
         
-        /* --- 双语文本样式 --- */
-        .text-en { font-weight: 500; color: #2c3e50; margin-bottom: 4px; display: block; }
-        .text-cn { font-size: 0.9em; color: #666; display: block; margin-bottom: 10px; }
+        h3 { margin: 0 0 10px; color: #fff; font-size: 18px; }
+        .tag { background: #d4af37; color: #000; padding: 3px 8px; font-size: 11px; border-radius: 4px; font-weight: bold; margin-right: 5px; display: inline-block; margin-bottom: 10px; }
+        .desc { font-size: 13px; color: #ccc; margin-bottom: 15px; text-align: justify; }
 
-        /* --- 充电情报框 --- */
-        .charging-box { background-color: #e8f5e9; border-left: 5px solid #2e7d32; padding: 15px; margin: 15px 0; border-radius: 4px; font-size: 0.95em; }
-        .charging-title { font-weight: bold; color: #2e7d32; display: block; margin-bottom: 8px; font-size: 1em; }
-        .tag-paid { color: #d32f2f; background: #ffebee; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-right: 5px; border: 1px solid #ffcdd2; }
-        .tag-plentiful { color: #1b5e20; background: #e8f5e9; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; font-weight: bold; border: 1px solid #c8e6c9; }
-        .tag-limited { color: #f57f17; background: #fffde7; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; font-weight: bold; border: 1px solid #fff9c4; }
+        /* --- 按钮 --- */
+        .btn { display: block; width: 100%; padding: 12px 0; text-align: center; background: #d4af37; color: #000; text-decoration: none; font-weight: bold; border-radius: 6px; transition: 0.3s; }
+        .btn:hover { background: #fff; }
 
-        /* --- 按钮样式 --- */
-        .btn { display: block; width: 100%; text-align: center; background-color: #ff5722; color: white; padding: 12px 0; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; margin-top: 15px; box-shadow: 0 2px 5px rgba(255, 87, 34, 0.3); }
-        .btn:hover { background-color: #e64a19; }
-        .btn small { display: block; font-size: 0.8em; font-weight: normal; opacity: 0.9; }
-
-        /* --- Shopee 板块样式 --- */
-        .shopee-section { margin-top: 50px; border-top: 2px dashed #eee; padding-top: 30px; }
-        .shopee-title { text-align: center; color: #e64a19; margin-bottom: 5px; }
-        .shopee-grid { display: flex; gap: 15px; flex-wrap: wrap; }
-        .product-card { flex: 1; min-width: 140px; border: 1px solid #eee; padding: 15px; border-radius: 8px; text-align: center; background: #fafafa; }
-        .product-name { font-weight: bold; margin: 10px 0 5px; font-size: 0.95em; }
-        .product-desc { font-size: 0.8em; color: #777; margin-bottom: 10px; }
-        .shop-btn { display: block; background: #ee4d2d; color: white; padding: 8px; font-size: 0.85em; border-radius: 4px; text-decoration: none; }
-
-        .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; }
+        /* --- 底部 & 免责声明 --- */
+        footer { text-align: center; padding: 20px 20px 40px; font-size: 12px; color: #666; border-top: 1px solid #333; background: #1f1f1f; }
+        
+        /* 👇 这里的样式是专门为了免责声明设计的 */
+        .disclaimer { 
+            font-size: 11px; 
+            color: #888; 
+            margin-top: 20px; 
+            padding: 15px; 
+            background: rgba(255,255,255,0.05); /* 半透明背景 */
+            border-radius: 12px; 
+            text-align: left; 
+            line-height: 1.5; 
+            border: 1px solid #333;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>⚡ Johor EV Friendly Hotel Guide</h1>
-        <h3 class="subtitle">柔佛电动车自驾游住宿指南 (2026 Edition)</h3>
-        <p class="intro">
-            Driving a Tesla, BYD or Proton e.MAS to Johor? Here are the top 5 hotels where you can sleep & charge.<br>
-            <span style="font-size: 0.9em; color: #777;">开电动车来柔佛玩？这 5 家酒店让你睡觉时也能满电复活。</span>
-        </p>
+        <h1>⚡ Johor EV Trip Guide</h1>
+        <p class="subtitle">柔佛新山 · 充电无忧之旅</p>
     </header>
 
-    <article class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80" alt="Johor Bahru City" class="hotel-img">
-        <h2>1. Amari Johor Bahru <span class="location-tag">JB City Centre</span></h2>
-        <p>
-            <span class="text-en"><strong>Why here:</strong> Unbeatable location directly opposite CIQ & City Square Mall. Perfect for short trips.</span>
-            <span class="text-cn"><strong>推荐理由：</strong> 位置无敌，就在关口 CIQ 对面。非常适合刚通关不想跑远的车主。</span>
-        </p>
-        <div class="charging-box">
-            <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-limited">Limited Slots 位少</span></span>
-            <ul style="padding-left: 20px; margin: 5px 0;">
-                <li><strong>Charger:</strong> 2x JomCharge AC (Level 6 Parking).</li>
-                <li><strong>Note:</strong> Slots are limited. Avoid peak hours.<br><span style="color:#666; font-size:0.9em;">位子有限 (仅2-3个)，建议避开周末高峰。</span></li>
-            </ul>
-        </div>
-        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
-    </article>
-
-    <article class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1481437642641-2f0ae875f836?auto=format&fit=crop&w=800&q=80" alt="Shopping Mall" class="hotel-img">
-        <h2>2. St. Giles Southkey <span class="location-tag">Mid Valley Mall</span></h2>
-        <p>
-            <span class="text-en"><strong>Why here:</strong> Located right above the biggest mall in JB (Mid Valley). Best charging hub in town.</span>
-            <span class="text-cn"><strong>推荐理由：</strong> 楼下就是 Mid Valley 商场，充电选择全柔佛最多！</span>
-        </p>
-        <div class="charging-box">
-            <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-plentiful">Many Slots 位多</span></span>
-            <ul style="padding-left: 20px; margin: 5px 0;">
-                <li><strong>Charger:</strong> 8x Tesla Superchargers + Gentari DC/AC.</li>
-                <li><strong>Note:</strong> Very safe & convenient. Charge while you shop.<br><span style="color:#666; font-size:0.9em;">位子非常充足，就在商场停车场，可以边逛街边充。</span></li>
-            </ul>
-        </div>
-        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
-    </article>
-
-    <article class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1571896349842-6e53ce41e887?auto=format&fit=crop&w=800&q=80" alt="Resort Pool" class="hotel-img">
-        <h2>3. Hard Rock Hotel Desaru <span class="location-tag">Desaru Coast</span></h2>
-        <p>
-            <span class="text-en"><strong>Why here:</strong> Best for family vacation & waterpark access. Walking distance to public DC chargers.</span>
-            <span class="text-cn"><strong>推荐理由：</strong> 周末家庭度假首选。虽然酒店内桩少，但旁边就是公共超充站。</span>
-        </p>
-        <div class="charging-box">
-            <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-limited">Public Hub 公共站</span></span>
-            <ul style="padding-left: 20px; margin: 5px 0;">
-                <li><strong>Charger:</strong> Tesla V3 + ChargEV (at Public Parking).</li>
-                <li><strong>Note:</strong> Public chargers might be busy on weekends.<br><span style="color:#666; font-size:0.9em;">主要依靠旁边的公共停车场充电，旺季可能需要排队。</span></li>
-            </ul>
-        </div>
-        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
-    </article>
-
-    <article class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Modern Building" class="hotel-img">
-        <h2>4. Sunway Hotel Big Box <span class="location-tag">Iskandar Puteri</span></h2>
-        <p>
-            <span class="text-en"><strong>Why here:</strong> Near Legoland & Tuas Checkpoint. A quiet EV hub with plenty of food options.</span>
-            <span class="text-cn"><strong>推荐理由：</strong> 靠近 Legoland 和大士关口。商场就在楼下，吃喝玩乐一站式。</span>
-        </p>
-        <div class="charging-box">
-            <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-plentiful">Many Slots 位多</span></span>
-            <ul style="padding-left: 20px; margin: 5px 0;">
-                <li><strong>Charger:</strong> Tesla Superchargers + Gentari DC.</li>
-                <li><strong>Note:</strong> Usually easy to get a spot.<br><span style="color:#666; font-size:0.9em;">通常位子很空，适合作为入境后的第一站补给。</span></li>
-            </ul>
-        </div>
-        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
-    </article>
-
-    <article class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Airport" class="hotel-img">
-        <h2>5. Impiana Hotel Senai <span class="location-tag">Senai Airport</span></h2>
-        <p>
-            <span class="text-en"><strong>Why here:</strong> Closest hotel to Senai Airport. Good for business trips.</span>
-            <span class="text-cn"><strong>推荐理由：</strong> 商务出差首选，离机场最近的星级酒店。</span>
-        </p>
-        <div class="charging-box">
-            <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-limited">Very Limited 极少</span></span>
-            <ul style="padding-left: 20px; margin: 5px 0;">
-                <li><strong>Charger:</strong> Wall socket / Slow AC only.</li>
-                <li><strong>Advice:</strong> Better to charge at nearby Petronas/Caltex before checking in.<br><span style="color:#666; font-size:0.9em;">建议在附近的油站快充站充好后再入住，比较安心。</span></li>
-            </ul>
-        </div>
-        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
-    </article>
-
-    <div class="shopee-section">
-        <h2 class="shopee-title">🎒 EV Essentials (自驾神器)</h2>
-        <p style="text-align: center; font-size: 0.9em; margin-bottom: 20px; color: #666;">Must-have items for your road trip:<br>车上常备这些，拒绝充电焦虑！</p>
-
-        <div class="shopee-grid">
-            <div class="product-card">
-                <div style="font-size: 2em;">🔌</div>
-                <p class="product-name">Type 2 Charging Cable</p>
-                <p class="product-desc">Public Charger (32A)</p>
-                <a href="https://s.shopee.com.my/6faxzRUTFE" class="shop-btn">View on Shopee ➔</a>
-            </div>
-
-            <div class="product-card">
-                <div style="font-size: 2em;">🔋</div>
-                <p class="product-name">Extension Socket</p>
-                <p class="product-desc">For Hotel Rooms</p>
-                <a href="https://s.shopee.com.my/9AIIyCzBbI" class="shop-btn">View on Shopee ➔</a>
-            </div>
-            
-             <div class="product-card">
-                <div style="font-size: 2em;">📱</div>
-                <p class="product-name">UGREEN Phone Holder</p>
-                <p class="product-desc">Safe Navigation</p>
-                <a href="https://s.shopee.com.my/5L5aPQBROT" class="shop-btn">View on Shopee ➔</a>
+    <div class="hotel-list">
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" class="card-img">
+            <div class="card-body">
+                <h3>1. Amari Johor Bahru</h3>
+                <span class="tag">⚡ Tesla Supercharger</span>
+                <span class="tag">📍 市中心</span>
+                <p class="desc">地点无敌！楼下就是 Zenith 广场，对面是 City Square。最重要的是楼下停车场有 Tesla 超充站和普通 AC 桩，住这里完全不用担心电量。</p>
+                <a href="#" class="btn">查看 Agoda 房价 ➔</a>
             </div>
         </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80" class="card-img">
+            <div class="card-body">
+                <h3>2. KSL Hotel & Resort</h3>
+                <span class="tag">⚡ 免费充电</span>
+                <span class="tag">🛍️ 购物首选</span>
+                <p class="desc">一家大小最爱！楼下就是 KSL 商场，吃喝玩乐全包。停车场特定区域有提供给住客的 EV 充电位，逛街充电两不误。</p>
+                <a href="#" class="btn">查看 Agoda 房价 ➔</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80" class="card-img">
+            <div class="card-body">
+                <h3>3. St. Giles Southkey</h3>
+                <span class="tag">⚡ Mid Valley</span>
+                <span class="tag">🌟 2024最火</span>
+                <p class="desc">目前新山最火的酒店，直通 Mid Valley Southkey 商场！停车场有多个 ChargeEV 和 Tesla 充电桩，非常方便。</p>
+                <a href="#" class="btn">查看 Agoda 房价 ➔</a>
+            </div>
+        </div>
+
     </div>
 
-    <div class="footer">
-        <p>Copyright © 2026 Johor EV Guide | MyEVTrip</p>
-    </div>
+    <footer>
+        <p style="font-weight: bold; color: #d4af37;">© 2026 Johor EV Trip Guide</p>
+        
+        <div class="disclaimer">
+            <p style="margin-bottom: 5px;"><strong>⚠️ 免责声明 (Disclaimer)：</strong></p>
+            <p>1. 本网站包含 Agoda 推广链接。如果您通过链接预订，博主会获得少量佣金以维持网站更新，但这<strong>绝不会增加您的预订费用</strong>。</p>
+            <p>2. 本站仅提供住宿推荐与资讯分享，<strong>不直接提供预订服务</strong>。所有房价、空房情况及售后服务均由 Agoda 官方负责。</p>
+        </div>
+    </footer>
 </div>
 
 </body>
