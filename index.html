@@ -30,8 +30,6 @@
         /* --- 充电情报框 --- */
         .charging-box { background-color: #e8f5e9; border-left: 5px solid #2e7d32; padding: 15px; margin: 15px 0; border-radius: 4px; font-size: 0.95em; }
         .charging-title { font-weight: bold; color: #2e7d32; display: block; margin-bottom: 8px; font-size: 1em; }
-        
-        /* --- 标签样式 --- */
         .tag-paid { color: #d32f2f; background: #ffebee; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-right: 5px; border: 1px solid #ffcdd2; }
         .tag-plentiful { color: #1b5e20; background: #e8f5e9; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; font-weight: bold; border: 1px solid #c8e6c9; }
         .tag-limited { color: #f57f17; background: #fffde7; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; font-weight: bold; border: 1px solid #fff9c4; }
@@ -47,6 +45,7 @@
         .shopee-grid { display: flex; gap: 15px; flex-wrap: wrap; }
         .product-card { flex: 1; min-width: 140px; border: 1px solid #eee; padding: 15px; border-radius: 8px; text-align: center; background: #fafafa; }
         .product-name { font-weight: bold; margin: 10px 0 5px; font-size: 0.95em; }
+        .product-desc { font-size: 0.8em; color: #777; margin-bottom: 10px; }
         .shop-btn { display: block; background: #ee4d2d; color: white; padding: 8px; font-size: 0.85em; border-radius: 4px; text-decoration: none; }
 
         .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; }
@@ -66,14 +65,11 @@
 
     <article class="hotel-card">
         <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80" alt="Johor Bahru City" class="hotel-img">
-        
         <h2>1. Amari Johor Bahru <span class="location-tag">JB City Centre</span></h2>
-        
         <p>
             <span class="text-en"><strong>Why here:</strong> Unbeatable location directly opposite CIQ & City Square Mall. Perfect for short trips.</span>
             <span class="text-cn"><strong>推荐理由：</strong> 位置无敌，就在关口 CIQ 对面。非常适合刚通关不想跑远的车主。</span>
         </p>
-        
         <div class="charging-box">
             <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-limited">Limited Slots 位少</span></span>
             <ul style="padding-left: 20px; margin: 5px 0;">
@@ -81,22 +77,16 @@
                 <li><strong>Note:</strong> Slots are limited. Avoid peak hours.<br><span style="color:#666; font-size:0.9em;">位子有限 (仅2-3个)，建议避开周末高峰。</span></li>
             </ul>
         </div>
-        <a href="#" class="btn">
-            Check Prices & Book ➔
-            <small>查看房价 & 预订</small>
-        </a>
+        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
     </article>
 
     <article class="hotel-card">
         <img src="https://images.unsplash.com/photo-1519567241046-7f570eee3d9b?auto=format&fit=crop&w=800&q=80" alt="Shopping Mall" class="hotel-img">
-
         <h2>2. St. Giles Southkey <span class="location-tag">Mid Valley Mall</span></h2>
-        
         <p>
             <span class="text-en"><strong>Why here:</strong> Located right above the biggest mall in JB (Mid Valley). Best charging hub in town.</span>
             <span class="text-cn"><strong>推荐理由：</strong> 楼下就是 Mid Valley 商场，充电选择全柔佛最多！</span>
         </p>
-        
         <div class="charging-box">
             <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-plentiful">Many Slots 位多</span></span>
             <ul style="padding-left: 20px; margin: 5px 0;">
@@ -104,22 +94,16 @@
                 <li><strong>Note:</strong> Very safe & convenient. Charge while you shop.<br><span style="color:#666; font-size:0.9em;">位子非常充足，就在商场停车场，可以边逛街边充。</span></li>
             </ul>
         </div>
-        <a href="#" class="btn">
-            Check Prices & Book ➔
-            <small>查看房价 & 预订</small>
-        </a>
+        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
     </article>
 
     <article class="hotel-card">
         <img src="https://images.unsplash.com/photo-1571896349842-6e53ce41e887?auto=format&fit=crop&w=800&q=80" alt="Resort Pool" class="hotel-img">
-
         <h2>3. Hard Rock Hotel Desaru <span class="location-tag">Desaru Coast</span></h2>
-        
         <p>
             <span class="text-en"><strong>Why here:</strong> Best for family vacation & waterpark access. Walking distance to public DC chargers.</span>
             <span class="text-cn"><strong>推荐理由：</strong> 周末家庭度假首选。虽然酒店内桩少，但旁边就是公共超充站。</span>
         </p>
-        
         <div class="charging-box">
             <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-limited">Public Hub 公共站</span></span>
             <ul style="padding-left: 20px; margin: 5px 0;">
@@ -127,22 +111,16 @@
                 <li><strong>Note:</strong> Public chargers might be busy on weekends.<br><span style="color:#666; font-size:0.9em;">主要依靠旁边的公共停车场充电，旺季可能需要排队。</span></li>
             </ul>
         </div>
-        <a href="#" class="btn">
-            Check Prices & Book ➔
-            <small>查看房价 & 预订</small>
-        </a>
+        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
     </article>
 
     <article class="hotel-card">
         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Modern Building" class="hotel-img">
-
         <h2>4. Sunway Hotel Big Box <span class="location-tag">Iskandar Puteri</span></h2>
-        
         <p>
             <span class="text-en"><strong>Why here:</strong> Near Legoland & Tuas Checkpoint. A quiet EV hub with plenty of food options.</span>
             <span class="text-cn"><strong>推荐理由：</strong> 靠近 Legoland 和大士关口。商场就在楼下，吃喝玩乐一站式。</span>
         </p>
-        
         <div class="charging-box">
             <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-paid">Paid 付费</span> <span class="tag-plentiful">Many Slots 位多</span></span>
             <ul style="padding-left: 20px; margin: 5px 0;">
@@ -150,22 +128,16 @@
                 <li><strong>Note:</strong> Usually easy to get a spot.<br><span style="color:#666; font-size:0.9em;">通常位子很空，适合作为入境后的第一站补给。</span></li>
             </ul>
         </div>
-        <a href="#" class="btn">
-            Check Prices & Book ➔
-            <small>查看房价 & 预订</small>
-        </a>
+        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
     </article>
 
     <article class="hotel-card">
         <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Airport" class="hotel-img">
-
         <h2>5. Impiana Hotel Senai <span class="location-tag">Senai Airport</span></h2>
-        
         <p>
             <span class="text-en"><strong>Why here:</strong> Closest hotel to Senai Airport. Good for business trips.</span>
             <span class="text-cn"><strong>推荐理由：</strong> 商务出差首选，离机场最近的星级酒店。</span>
         </p>
-        
         <div class="charging-box">
             <span class="charging-title">🔋 EV Status (充电情报): <span class="tag-limited">Very Limited 极少</span></span>
             <ul style="padding-left: 20px; margin: 5px 0;">
@@ -173,10 +145,7 @@
                 <li><strong>Advice:</strong> Better to charge at nearby Petronas/Caltex before checking in.<br><span style="color:#666; font-size:0.9em;">建议在附近的油站快充站充好后再入住，比较安心。</span></li>
             </ul>
         </div>
-        <a href="#" class="btn">
-            Check Prices & Book ➔
-            <small>查看房价 & 预订</small>
-        </a>
+        <a href="#" class="btn">Check Prices & Book ➔<small>查看房价 & 预订</small></a>
     </article>
 
     <div class="shopee-section">
@@ -188,21 +157,21 @@
                 <div style="font-size: 2em;">🔌</div>
                 <p class="product-name">Type 2 Charging Cable</p>
                 <p class="product-desc">Public Charger (32A)</p>
-                <a href="#" class="shop-btn">View on Shopee ➔</a>
+                <a href="https://s.shopee.com.my/6faxzRUTFE" class="shop-btn">View on Shopee ➔</a>
             </div>
 
             <div class="product-card">
                 <div style="font-size: 2em;">🔋</div>
                 <p class="product-name">Extension Socket</p>
                 <p class="product-desc">For Hotel Rooms</p>
-                <a href="#" class="shop-btn">View on Shopee ➔</a>
+                <a href="https://s.shopee.com.my/9AIIyCzBbI" class="shop-btn">View on Shopee ➔</a>
             </div>
             
              <div class="product-card">
                 <div style="font-size: 2em;">📱</div>
-                <p class="product-name">Phone Holder</p>
+                <p class="product-name">UGREEN Phone Holder</p>
                 <p class="product-desc">Safe Navigation</p>
-                <a href="#" class="shop-btn">View on Shopee ➔</a>
+                <a href="https://s.shopee.com.my/5L5aPQBROT" class="shop-btn">View on Shopee ➔</a>
             </div>
         </div>
     </div>
