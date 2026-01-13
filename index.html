@@ -19,7 +19,7 @@
 
     <meta property="og:title" content="⚡ 2026 Johor EV Hotel Guide | 柔佛充电酒店指南">
     <meta property="og:description" content="Where to stay, charge & eat in JB? Amari, KSL, Desaru reviewed. 开电车去新山住哪里？充电+美食全攻略。">
-    <meta property="og:image" content="https://pix10.agoda.net/hotelImages/106/10642424/10642424_19122317480085684853.jpg?ca=9&ce=1&s=1024x768">
+    <meta property="og:image" content="amari.jpg">
     <meta property="og:url" content="https://myevtrip.github.io/johor-ev-hotel/">
     <meta property="og:type" content="article">
     
@@ -39,6 +39,7 @@
         .card { background: #2d2d2d; border-radius: 12px; overflow: hidden; margin-bottom: 25px; border: 1px solid #333; transition: transform 0.2s; }
         .card:hover { transform: translateY(-5px); border-color: #d4af37; }
         
+        /* 图片样式 */
         .card-img { width: 100%; height: 200px; object-fit: cover; filter: brightness(0.95); transition: opacity 0.3s; }
         .card-body { padding: 20px; }
         
@@ -77,9 +78,11 @@
         .disclaimer strong { color: #d4af37; }
         
         /* 小图点击样式 */
-        .thumb-img { min-width: 80px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; }
+        .thumb-img { min-width: 80px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; }
         .thumb-img:hover { border-color: #d4af37; opacity: 0.8; }
         .thumb-img:active { transform: scale(0.95); }
+        /* 相册容器 */
+        .gallery-scroll { display: flex; overflow-x: auto; gap: 8px; padding: 10px; background: #222; }
     </style>
 </head>
 <body>
@@ -94,10 +97,8 @@
     <div class="hotel-list">
         
         <div class="card">
-            
             <img id="amari-main" src="amari.jpg" class="card-img" alt="Amari Main">
-            
-            <div style="display: flex; overflow-x: auto; gap: 8px; padding: 10px; background: #222;">
+            <div class="gallery-scroll">
                 <img src="amari.jpg" class="thumb-img" onclick="document.getElementById('amari-main').src=this.src">
                 <img src="amari1.jpg" class="thumb-img" onclick="document.getElementById('amari-main').src=this.src">
                 <img src="amari2.jpg" class="thumb-img" onclick="document.getElementById('amari-main').src=this.src">
@@ -110,111 +111,125 @@
                 <h3>1. Amari Johor Bahru</h3>
                 <span class="h3-cn">阿玛瑞酒店 (City Centre)</span>
                 <span class="tag">📍 Opposite CIQ</span><span class="tag">⚡ Limited Slots</span>
-                
                 <div class="charge-info">
                     <span class="charge-title">🔋 Charging Info (充电情报):</span>
                     JomCharge (AC) at Level 6 Parking. Paid.
                     <span class="text-cn">位于6楼停车场。位子较少，建议避开高峰。</span>
                 </div>
-
                 <div class="fun-info">
                     <span class="fun-title">🍽️ Eat & Play (吃喝玩乐):</span>
                     Walk to City Square, JBCC & Pasar Karat Night Market. Must try: Hiap Joo Banana Cake.
                     <span class="text-cn">步行可达 City Square, 陈旭年街 (必买 Hiap Joo 香蕉蛋糕), 和 Karat 夜市。</span>
                 </div>
-                
                 <a href="https://www.agoda.com/amari-johor-bahru/hotel/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://pix10.agoda.net/hotelImages/106/10642424/10642424_19122317480085684853.jpg?ca=9&ce=1&s=1024x768" class="card-img" alt="St Giles Southkey">
+            <img id="stgiles-main" src="stgiles.jpg" class="card-img" alt="St Giles Main">
+            <div class="gallery-scroll">
+                <img src="stgiles.jpg" class="thumb-img" onclick="document.getElementById('stgiles-main').src=this.src">
+                <img src="stgiles1.jpg" class="thumb-img" onclick="document.getElementById('stgiles-main').src=this.src">
+            </div>
             <div class="card-body">
                 <h3>2. St. Giles Southkey</h3>
                 <span class="h3-cn">圣吉尔斯酒店 (Mid Valley)</span>
                 <span class="tag">🛍️ Shopping Mall</span><span class="tag">⚡ Many Chargers</span>
-                
                 <div class="charge-info">
                     <span class="charge-title">🔋 Charging Info (充电情报):</span>
                     Tesla Supercharger + Gentari DC/AC at Mall parking.
                     <span class="text-cn">楼下商场停车场有大量充电桩，全柔佛最多。</span>
                 </div>
-
                 <div class="fun-info">
                     <span class="fun-title">🍽️ Eat & Play (吃喝玩乐):</span>
                     Direct access to Mid Valley Southkey Mall. Din Tai Fung, Oriental Kopi & Cinema.
                     <span class="text-cn">直通 Mid Valley 商场。推荐：鼎泰丰、东方咖啡、逛街看电影超方便。</span>
                 </div>
-
-                <a href="https://www.agoda.com/st-giles-southkey-johor-bahru/hotel/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
+                <a href="https://www.agoda.com/search?selectedproperty=10642424" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://pix10.agoda.net/hotelImages/566/5662707/5662707_18101115390068430637.jpg?ca=0&ce=1&s=1024x768" class="card-img" alt="Hard Rock Desaru">
+            <img id="hardrock-main" src="hardrock.jpeg" class="card-img" alt="Hard Rock Main">
+            <div class="gallery-scroll">
+                <img src="hardrock.jpeg" class="thumb-img" onclick="document.getElementById('hardrock-main').src=this.src">
+                <img src="hardrock1.jpg" class="thumb-img" onclick="document.getElementById('hardrock-main').src=this.src">
+                <img src="hardrock2.jpg" class="thumb-img" onclick="document.getElementById('hardrock-main').src=this.src">
+                <img src="hardrock3.jpg" class="thumb-img" onclick="document.getElementById('hardrock-main').src=this.src">
+                <img src="hardrock4.jpg" class="thumb-img" onclick="document.getElementById('hardrock-main').src=this.src">
+                <img src="hardrock5.jpg" class="thumb-img" onclick="document.getElementById('hardrock-main').src=this.src">
+            </div>
             <div class="card-body">
                 <h3>3. Hard Rock Hotel Desaru</h3>
                 <span class="h3-cn">迪沙鲁硬石酒店 (Beach)</span>
                 <span class="tag">🌊 Family Trip</span><span class="tag">⚡ Public Hub</span>
-                
                 <div class="charge-info">
                     <span class="charge-title">🔋 Charging Info (充电情报):</span>
                     Tesla V3 + ChargEV at Desaru Public Parking nearby.
                     <span class="text-cn">主要使用旁边的公共充电站，旺季需排队。</span>
                 </div>
-
                 <div class="fun-info">
                     <span class="fun-title">🎡 Eat & Play (吃喝玩乐):</span>
                     Next to Adventure Waterpark. 10min drive to Sg. Rengit for Lobster seafood.
                     <span class="text-cn">就在水上乐园旁边。开车10分钟去四湾岛 (Sg Rengit) 吃龙虾海鲜。</span>
                 </div>
-
                 <a href="https://www.agoda.com/hard-rock-hotel-desaru-coast/hotel/desaru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://pix10.agoda.net/hotelImages/104/10479672/10479672_20022810360088754549.jpg?ca=13&ce=1&s=1024x768" class="card-img" alt="Sunway Hotel">
+            <img id="sunway-main" src="sunway.jpeg" class="card-img" alt="Sunway Main">
+            <div class="gallery-scroll">
+                <img src="sunway.jpeg" class="thumb-img" onclick="document.getElementById('sunway-main').src=this.src">
+                <img src="sunway1.jpeg" class="thumb-img" onclick="document.getElementById('sunway-main').src=this.src">
+                <img src="sunway2.jpeg" class="thumb-img" onclick="document.getElementById('sunway-main').src=this.src">
+                <img src="sunway3.jpeg" class="thumb-img" onclick="document.getElementById('sunway-main').src=this.src">
+                <img src="sunway4.jpeg" class="thumb-img" onclick="document.getElementById('sunway-main').src=this.src">
+                <img src="sunway5.jpg" class="thumb-img" onclick="document.getElementById('sunway-main').src=this.src">
+            </div>
             <div class="card-body">
                 <h3>4. Sunway Hotel Big Box</h3>
                 <span class="h3-cn">双威大盒子酒店 (Legoland)</span>
                 <span class="tag">🎢 Tuas Link</span><span class="tag">⚡ Easy Access</span>
-                
                 <div class="charge-info">
                     <span class="charge-title">🔋 Charging Info (充电情报):</span>
                     Tesla Supercharger + Gentari DC right at the mall.
                     <span class="text-cn">靠近大士关口。商场有超充，通常有位。</span>
                 </div>
-
                 <div class="fun-info">
                     <span class="fun-title">🎡 Eat & Play (吃喝玩乐):</span>
                     Walking distance to X Park. 5min drive to Legoland Malaysia. BookXcess (huge bookstore).
                     <span class="text-cn">步行可达 X Park 极限运动。开车5分钟到 Legoland。楼下有超美 BookXcess 书店。</span>
                 </div>
-
                 <a href="https://www.agoda.com/sunway-hotel-big-box/hotel/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://pix10.agoda.net/hotelImages/566/566373/566373_14050516030019326933.jpg?ca=2&ce=1&s=1024x768" class="card-img" alt="Impiana Senai">
+            <img id="impiana-main" src="impiana.jpeg" class="card-img" alt="Impiana Main">
+            <div class="gallery-scroll">
+                <img src="impiana.jpeg" class="thumb-img" onclick="document.getElementById('impiana-main').src=this.src">
+                <img src="impiana1.jpg" class="thumb-img" onclick="document.getElementById('impiana-main').src=this.src">
+                <img src="impiana2.jpg" class="thumb-img" onclick="document.getElementById('impiana-main').src=this.src">
+                <img src="impiana3.jpg" class="thumb-img" onclick="document.getElementById('impiana-main').src=this.src">
+                <img src="impiana4.jpg" class="thumb-img" onclick="document.getElementById('impiana-main').src=this.src">
+                <img src="impiana5.jpg" class="thumb-img" onclick="document.getElementById('impiana-main').src=this.src">
+                <img src="impiana6.jpg" class="thumb-img" onclick="document.getElementById('impiana-main').src=this.src">
+            </div>
             <div class="card-body">
                 <h3>5. Impiana Hotel Senai</h3>
                 <span class="h3-cn">士乃机场酒店 (Airport)</span>
                 <span class="tag">✈️ Business</span><span class="tag">⚠️ Slow Charge Only</span>
-                
                 <div class="charge-info">
                     <span class="charge-title">🔋 Charging Info (充电情报):</span>
                     3-pin socket / Slow AC only. Use fast charger nearby.
                     <span class="text-cn">只有慢充。建议先在附近油站快充后再入住。</span>
                 </div>
-
                 <div class="fun-info">
                     <span class="fun-title">🛍️ Eat & Play (吃喝玩乐):</span>
                     10min drive to Johor Premium Outlets (JPO). Famous Senai delicious food nearby.
                     <span class="text-cn">开车10分钟到 JPO 名牌城。附近有很多士乃地道美食。</span>
                 </div>
-
                 <a href="https://www.agoda.com/impiana-hotel-senai/hotel/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
             </div>
         </div>
@@ -224,34 +239,29 @@
     <div class="shopee-section">
         <h2 class="shopee-title">🎒 EV Essentials / 自驾神器</h2>
         <div class="shopee-grid">
-            
             <div class="product-card">
                 <div style="font-size: 24px;">🔌</div>
                 <p class="product-name">Type 2 Cable</p>
                 <p class="product-sub">充电线 (32A)</p>
                 <a href="https://s.shopee.com.my/6faxzRUTFE" class="shop-btn">View Shopee ➔</a>
             </div>
-
             <div class="product-card">
                 <div style="font-size: 24px;">🔋</div>
                 <p class="product-name">Extension Socket</p>
                 <p class="product-sub">酒店延长线</p>
                 <a href="https://s.shopee.com.my/9AIIyCzBbI" class="shop-btn">View Shopee ➔</a>
             </div>
-            
              <div class="product-card">
                 <div style="font-size: 24px;">📱</div>
                 <p class="product-name">Phone Holder</p>
                 <p class="product-sub">手机支架</p>
                 <a href="https://s.shopee.com.my/5L5aPQBROT" class="shop-btn">View Shopee ➔</a>
             </div>
-
         </div>
     </div>
 
     <footer>
         <p style="font-weight: bold; color: #d4af37;">© 2026 Johor EV Trip Guide</p>
-        
         <div class="disclaimer">
             <p style="margin-bottom: 5px;"><strong>⚠️ Disclaimer / 免责声明：</strong></p>
             <p>1. This site contains affiliate links (Agoda/Shopee). We may earn a small commission at no extra cost to you.<br>本站包含推广链接，博主会获得少量佣金，但绝不会增加您的费用。</p>
