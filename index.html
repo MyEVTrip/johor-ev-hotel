@@ -29,10 +29,15 @@
         .container { max-width: 640px; margin: 0 auto; background: #242424; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
         
         /* --- Header --- */
-        header { background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 50px 20px; text-align: center; color: #d4af37; border-bottom: 2px solid #d4af37; }
+        header { background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 40px 20px 30px; text-align: center; color: #d4af37; border-bottom: 2px solid #d4af37; }
         h1 { margin: 0; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; color: #fff; }
         .subtitle { font-size: 14px; color: #d4af37; margin-top: 5px; font-weight: 500; }
         .intro { font-size: 12px; color: #888; margin-top: 15px; }
+
+        /* 城市导航条样式 */
+        .city-nav { margin-top: 25px; font-size: 14px; letter-spacing: 0.5px; padding-top: 15px; border-top: 1px solid #333; }
+        .city-nav a { transition: color 0.3s; }
+        .city-nav a:hover { color: #fff !important; }
 
         /* --- Hotel List --- */
         .hotel-list { padding: 30px 20px 10px; }
@@ -92,7 +97,15 @@
         <h1>⚡ Johor EV Trip Guide</h1>
         <p class="subtitle">柔佛新山 · 充电无忧之旅</p>
         <p class="intro">Top 5 Hotels with EV Charging & Food Guide<br>自驾新山必看！自带充电桩 + 周边吃喝攻略</p>
-    </header>
+
+        <div class="city-nav">
+            <span style="color: #d4af37; font-weight: bold; border-bottom: 2px solid #d4af37; padding-bottom: 3px; cursor: default;">Johor (JB)</span>
+            
+            <span style="color: #444; margin: 0 12px;">|</span>
+            
+            <a href="kl.html" style="color: #888; text-decoration: none;">Kuala Lumpur (KL)</a>
+        </div>
+        </header>
 
     <div class="hotel-list">
         
