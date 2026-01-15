@@ -32,7 +32,7 @@
         header { background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 40px 20px 30px; text-align: center; color: #d4af37; border-bottom: 2px solid #d4af37; }
         h1 { margin: 0; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; color: #fff; }
         .subtitle { font-size: 14px; color: #d4af37; margin-top: 5px; font-weight: 500; }
-        .intro { font-size: 12px; color: #888; margin-top: 15px; }
+        .intro { font-size: 12px; color: #888; margin-top: 15px; line-height: 1.6; }
 
         /* 城市导航条样式 */
         .city-nav { margin-top: 25px; font-size: 14px; letter-spacing: 0.5px; padding-top: 15px; border-top: 1px solid #333; }
@@ -63,10 +63,32 @@
 
         .text-cn { display: block; color: #777; font-size: 11px; margin-top: 3px; }
 
-        /* --- Buttons --- */
-        .btn { display: block; width: 100%; padding: 12px 0; text-align: center; background: #d4af37; color: #000; text-decoration: none; font-weight: bold; border-radius: 6px; transition: 0.3s; font-size: 14px; }
-        .btn span { display: block; font-size: 11px; font-weight: normal; opacity: 0.8; }
-        .btn:hover { background: #fff; }
+        /* --- Buttons (双按钮设计) --- */
+        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
+        
+        .btn { 
+            flex: 1; /* 平分宽度 */
+            padding: 10px 0; 
+            text-align: center; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 6px; 
+            transition: 0.3s; 
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn span { font-size: 10px; font-weight: normal; opacity: 0.8; margin-top: 2px; }
+
+        /* Agoda 样式 (金色实心) */
+        .btn-agoda { background: #d4af37; color: #000; border: 1px solid #d4af37; }
+        .btn-agoda:hover { background: #fff; border-color: #fff; }
+
+        /* Trip.com 样式 (黑底金边) */
+        .btn-trip { background: transparent; color: #fff; border: 1px solid #d4af37; }
+        .btn-trip:hover { background: rgba(212, 175, 55, 0.15); border-color: #fff; }
 
         /* --- Shopee Section --- */
         .shopee-section { padding: 20px; border-top: 1px dashed #444; margin-top: 20px; }
@@ -105,7 +127,7 @@
             
             <a href="kl.html" style="color: #888; text-decoration: none;">Kuala Lumpur (KL)</a>
         </div>
-        </header>
+    </header>
 
     <div class="hotel-list">
         
@@ -134,7 +156,17 @@
                     Walk to City Square, JBCC & Pasar Karat Night Market. Must try: Hiap Joo Banana Cake.
                     <span class="text-cn">步行可达 City Square, 陈旭年街 (必买 Hiap Joo 香蕉蛋糕), 和 Karat 夜市。</span>
                 </div>
-                <a href="https://www.agoda.com/amari-johor-bahru/hotel/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
+                
+                <div class="btn-group">
+                    <a href="https://www.agoda.com/amari-johor-bahru/hotel/johor-bahru-my.html" class="btn btn-agoda">
+                        Agoda
+                        <span>Check Rates</span>
+                    </a>
+                    <a href="https://www.trip.com/hotels/johor-bahru-hotel-detail-6467228/amari-johor-bahru/" class="btn btn-trip">
+                        Trip.com
+                        <span>Points & Deals</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -164,7 +196,17 @@
                     Direct access to Mid Valley Southkey Mall. Din Tai Fung, Oriental Kopi & Cinema.
                     <span class="text-cn">直通 Mid Valley 商场。推荐：鼎泰丰、东方咖啡、逛街看电影超方便。</span>
                 </div>
-                <a href="https://www.agoda.com/city/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
+                
+                <div class="btn-group">
+                    <a href="https://www.agoda.com/city/johor-bahru-my.html" class="btn btn-agoda">
+                        Agoda
+                        <span>Check Rates</span>
+                    </a>
+                    <a href="https://www.trip.com/hotels/johor-bahru-hotel-detail-82312993/st-giles-southkey-johor-bahru/" class="btn btn-trip">
+                        Trip.com
+                        <span>Points & Deals</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -192,7 +234,17 @@
                     Next to Adventure Waterpark. 10min drive to Sg. Rengit for Lobster seafood.
                     <span class="text-cn">就在水上乐园旁边。开车10分钟去四湾岛 (Sg Rengit) 吃龙虾海鲜。</span>
                 </div>
-                <a href="https://www.agoda.com/hard-rock-hotel-desaru-coast/hotel/desaru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
+                
+                <div class="btn-group">
+                    <a href="https://www.agoda.com/hard-rock-hotel-desaru-coast/hotel/desaru-my.html" class="btn btn-agoda">
+                        Agoda
+                        <span>Check Rates</span>
+                    </a>
+                    <a href="https://www.trip.com/hotels/bandar-penawar-hotel-detail-20060783/hard-rock-hotel-desaru-coast/" class="btn btn-trip">
+                        Trip.com
+                        <span>Points & Deals</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -220,7 +272,17 @@
                     Walking distance to X Park. 5min drive to Legoland Malaysia. BookXcess (huge bookstore).
                     <span class="text-cn">步行可达 X Park 极限运动。开车5分钟到 Legoland。楼下有超美 BookXcess 书店。</span>
                 </div>
-                <a href="https://www.agoda.com/sunway-hotel-big-box/hotel/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
+                
+                <div class="btn-group">
+                    <a href="https://www.agoda.com/sunway-hotel-big-box/hotel/johor-bahru-my.html" class="btn btn-agoda">
+                        Agoda
+                        <span>Check Rates</span>
+                    </a>
+                    <a href="https://www.trip.com/hotels/iskandar-puteri-hotel-detail-70659858/sunway-hotel-big-box/" class="btn btn-trip">
+                        Trip.com
+                        <span>Points & Deals</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -249,7 +311,17 @@
                     10min drive to Johor Premium Outlets (JPO). Famous Senai delicious food nearby.
                     <span class="text-cn">开车10分钟到 JPO 名牌城。附近有很多士乃地道美食。</span>
                 </div>
-                <a href="https://www.agoda.com/impiana-hotel-senai/hotel/johor-bahru-my.html" class="btn">Check Agoda Rates ➔<span>查看房价 & 预订</span></a>
+                
+                <div class="btn-group">
+                    <a href="https://www.agoda.com/impiana-hotel-senai/hotel/johor-bahru-my.html" class="btn btn-agoda">
+                        Agoda
+                        <span>Check Rates</span>
+                    </a>
+                    <a href="https://www.trip.com/hotels/senai-hotel-detail-1007796/impiana-hotel-senai/" class="btn btn-trip">
+                        Trip.com
+                        <span>Points & Deals</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -283,8 +355,8 @@
         <p style="font-weight: bold; color: #d4af37;">© 2026 Johor EV Trip Guide</p>
         <div class="disclaimer">
             <p style="margin-bottom: 5px;"><strong>⚠️ Disclaimer / 免责声明：</strong></p>
-            <p>1. This site contains affiliate links (Agoda/Shopee). We may earn a small commission at no extra cost to you.<br>本站包含推广链接，博主会获得少量佣金，但绝不会增加您的费用。</p>
-            <p>2. We are not responsible for bookings or product quality. Please contact Agoda/Shopee official stores for support.<br>本站仅做分享，所有售后服务均由 Agoda/Shopee 官方负责。</p>
+            <p>1. This site contains affiliate links (Agoda/Trip.com/Shopee). We may earn a small commission at no extra cost to you.<br>本站包含推广链接，博主会获得少量佣金，但绝不会增加您的费用。</p>
+            <p>2. We are not responsible for bookings or product quality. Please contact official stores for support.<br>本站仅做分享，所有售后服务均由 Agoda/Trip.com/Shopee 官方负责。</p>
         </div>
     </footer>
 </div>
