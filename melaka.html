@@ -17,7 +17,7 @@
     
     <meta property="og:title" content="🏛️ 2026 Melaka EV Hotel Guide | 马六甲充电住宿指南">
     <meta property="og:description" content="Top 5 Hotels with EV Charging in Melaka. 包含 Hatten, DoubleTree, Ames 等充电攻略。">
-    <meta property="og:image" content="https://myevtrip.github.io/johor-ev-hotel/dt-melaka.jpg">
+    <meta property="og:image" content="https://myevtrip.github.io/johor-ev-hotel/dt-melaka.jpeg">
     <meta property="og:url" content="https://myevtrip.github.io/johor-ev-hotel/melaka.html">
     <meta property="og:type" content="article">
 
@@ -41,7 +41,7 @@
         .card { background: #2d2d2d; border-radius: 12px; overflow: hidden; margin-bottom: 25px; border: 1px solid #333; transition: transform 0.2s; }
         .card:hover { transform: translateY(-5px); border-color: #d4af37; }
         
-        .card-img { width: 100%; height: 200px; object-fit: cover; filter: brightness(0.95); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; filter: brightness(0.95); transition: opacity 0.3s; }
         .card-body { padding: 20px; }
         
         h3 { margin: 0 0 5px; color: #fff; font-size: 18px; }
@@ -79,6 +79,11 @@
 
         footer { text-align: center; padding: 20px 20px 40px; font-size: 12px; color: #666; border-top: 1px solid #333; background: #1f1f1f; }
         .disclaimer { font-size: 11px; color: #888; margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 12px; text-align: left; line-height: 1.5; border: 1px solid #333; }
+        
+        /* Gallery Styles */
+        .thumb-img { min-width: 80px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; }
+        .thumb-img:hover { border-color: #d4af37; opacity: 0.8; }
+        .gallery-scroll { display: flex; overflow-x: auto; gap: 8px; padding: 10px; background: #222; }
     </style>
 </head>
 <body>
@@ -105,7 +110,14 @@
     <div class="hotel-list">
         
         <div class="card">
-            <img src="dt-melaka.jpg" class="card-img" alt="DoubleTree by Hilton Melaka">
+            <img id="dt-main" src="dt-melaka.jpeg" class="card-img" alt="DoubleTree by Hilton Melaka">
+            <div class="gallery-scroll">
+                <img src="dt-melaka.jpeg" class="thumb-img" onclick="document.getElementById('dt-main').src=this.src">
+                <img src="dt-melaka1.jpeg" class="thumb-img" onclick="document.getElementById('dt-main').src=this.src">
+                <img src="dt-melaka2.jpg" class="thumb-img" onclick="document.getElementById('dt-main').src=this.src">
+                <img src="dt-melaka3.jpg" class="thumb-img" onclick="document.getElementById('dt-main').src=this.src">
+            </div>
+            
             <div class="card-body">
                 <h3>1. DoubleTree by Hilton Melaka</h3>
                 <span class="h3-cn">马六甲希尔顿逸林酒店 (Hatten City)</span>
@@ -131,7 +143,14 @@
         </div>
 
         <div class="card">
-            <img src="hatten.jpg" class="card-img" alt="Hatten Hotel Melaka">
+            <img id="hatten-main" src="hatten.jpg" class="card-img" alt="Hatten Hotel Melaka">
+            <div class="gallery-scroll">
+                <img src="hatten.jpg" class="thumb-img" onclick="document.getElementById('hatten-main').src=this.src">
+                <img src="hatten1.jpg" class="thumb-img" onclick="document.getElementById('hatten-main').src=this.src">
+                <img src="hatten2.jpg" class="thumb-img" onclick="document.getElementById('hatten-main').src=this.src">
+                <img src="hatten3.jpg" class="thumb-img" onclick="document.getElementById('hatten-main').src=this.src">
+            </div>
+            
             <div class="card-body">
                 <h3>2. Hatten Hotel Melaka</h3>
                 <span class="h3-cn">惠胜酒店 (City Centre)</span>
@@ -157,7 +176,14 @@
         </div>
 
         <div class="card">
-            <img src="courtyard.jpg" class="card-img" alt="Courtyard Melaka">
+            <img id="courtyard-main" src="courtyard.jpg" class="card-img" alt="Courtyard Melaka">
+            <div class="gallery-scroll">
+                <img src="courtyard.jpg" class="thumb-img" onclick="document.getElementById('courtyard-main').src=this.src">
+                <img src="courtyard1.jpg" class="thumb-img" onclick="document.getElementById('courtyard-main').src=this.src">
+                <img src="courtyard2.jpg" class="thumb-img" onclick="document.getElementById('courtyard-main').src=this.src">
+                <img src="courtyard3.jpg" class="thumb-img" onclick="document.getElementById('courtyard-main').src=this.src">
+            </div>
+
             <div class="card-body">
                 <h3>3. Courtyard by Marriott Melaka</h3>
                 <span class="h3-cn">万怡酒店 (New & Modern)</span>
@@ -183,7 +209,14 @@
         </div>
 
         <div class="card">
-            <img src="pines.jpg" class="card-img" alt="The Pines Melaka">
+            <img id="pines-main" src="pines.jpg" class="card-img" alt="The Pines Melaka">
+            <div class="gallery-scroll">
+                <img src="pines.jpg" class="thumb-img" onclick="document.getElementById('pines-main').src=this.src">
+                <img src="pines1.jpg" class="thumb-img" onclick="document.getElementById('pines-main').src=this.src">
+                <img src="pines2.jpg" class="thumb-img" onclick="document.getElementById('pines-main').src=this.src">
+                <img src="pines3.jpg" class="thumb-img" onclick="document.getElementById('pines-main').src=this.src">
+            </div>
+
             <div class="card-body">
                 <h3>4. The Pines Melaka</h3>
                 <span class="h3-cn">松树酒店 (Riverside)</span>
@@ -209,7 +242,14 @@
         </div>
         
         <div class="card">
-            <img src="ames.jpg" class="card-img" alt="Ames Hotel">
+            <img id="ames-main" src="ames.jpg" class="card-img" alt="Ames Hotel">
+            <div class="gallery-scroll">
+                <img src="ames.jpg" class="thumb-img" onclick="document.getElementById('ames-main').src=this.src">
+                <img src="ames1.jpeg" class="thumb-img" onclick="document.getElementById('ames-main').src=this.src">
+                <img src="ames2.jpeg" class="thumb-img" onclick="document.getElementById('ames-main').src=this.src">
+                <img src="ames3.jpg" class="thumb-img" onclick="document.getElementById('ames-main').src=this.src">
+            </div>
+
             <div class="card-body">
                 <h3>5. Ames Hotel</h3>
                 <span class="h3-cn">埃姆斯酒店 (Ayer Keroh)</span>
