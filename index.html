@@ -19,7 +19,7 @@
 
     <meta property="og:title" content="⚡ 2026 Johor EV Hotel Guide | 柔佛充电酒店指南">
     <meta property="og:description" content="Where to stay, charge & eat in JB? Amari, KSL, Desaru reviewed. 开电车去新山住哪里？充电+美食全攻略。">
-    <meta property="og:image" content="amari.jpg">
+    <meta property="og:image" content="https://myevtrip.github.io/johor-ev-hotel/amari.jpg">
     <meta property="og:url" content="https://myevtrip.github.io/johor-ev-hotel/">
     <meta property="og:type" content="article">
     
@@ -32,12 +32,14 @@
         header { background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 40px 20px 30px; text-align: center; color: #d4af37; border-bottom: 2px solid #d4af37; }
         h1 { margin: 0; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; color: #fff; }
         .subtitle { font-size: 14px; color: #d4af37; margin-top: 5px; font-weight: 500; }
-        .intro { font-size: 12px; color: #888; margin-top: 15px; line-height: 1.6; }
+        .intro { font-size: 12px; color: #888; margin-top: 15px; }
 
-        /* 城市导航条样式 */
+        /* 城市导航：三个城市连通 */
         .city-nav { margin-top: 25px; font-size: 14px; letter-spacing: 0.5px; padding-top: 15px; border-top: 1px solid #333; }
-        .city-nav a { transition: color 0.3s; }
-        .city-nav a:hover { color: #fff !important; }
+        .city-nav a { text-decoration: none; color: #888; transition: color 0.3s; margin: 0 8px; }
+        .city-nav a:hover { color: #fff; }
+        /* 当前页面高亮 */
+        .active-city { color: #d4af37 !important; font-weight: bold; border-bottom: 2px solid #d4af37; padding-bottom: 3px; }
 
         /* --- Hotel List --- */
         .hotel-list { padding: 30px 20px 10px; }
@@ -53,44 +55,25 @@
 
         .tag { background: #d4af37; color: #000; padding: 3px 8px; font-size: 10px; border-radius: 4px; font-weight: bold; margin-right: 5px; display: inline-block; margin-bottom: 10px; }
         
-        /* ⚡ Charging Info Box (Gold) */
         .charge-info { background: rgba(255, 255, 255, 0.05); border-left: 3px solid #d4af37; padding: 10px; margin: 10px 0 10px; font-size: 12px; color: #bbb; }
         .charge-title { color: #d4af37; font-weight: bold; display: block; margin-bottom: 5px; }
         
-        /* 🎡 Fun Info Box (Silver) */
         .fun-info { background: rgba(255, 255, 255, 0.02); border-left: 3px solid #e0e0e0; padding: 10px; margin: 0 0 20px; font-size: 12px; color: #bbb; }
         .fun-title { color: #fff; font-weight: bold; display: block; margin-bottom: 5px; }
-
         .text-cn { display: block; color: #777; font-size: 11px; margin-top: 3px; }
 
         /* --- Buttons (双按钮设计) --- */
         .btn-group { display: flex; gap: 10px; margin-top: 15px; }
-        
-        .btn { 
-            flex: 1; /* 平分宽度 */
-            padding: 10px 0; 
-            text-align: center; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 6px; 
-            transition: 0.3s; 
-            font-size: 13px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+        .btn { flex: 1; padding: 10px 0; text-align: center; text-decoration: none; font-weight: bold; border-radius: 6px; transition: 0.3s; font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .btn span { font-size: 10px; font-weight: normal; opacity: 0.8; margin-top: 2px; }
-
-        /* Agoda 样式 (金色实心) */
+        
         .btn-agoda { background: #d4af37; color: #000; border: 1px solid #d4af37; }
         .btn-agoda:hover { background: #fff; border-color: #fff; }
 
-        /* Trip.com 样式 (黑底金边) */
         .btn-trip { background: transparent; color: #fff; border: 1px solid #d4af37; }
         .btn-trip:hover { background: rgba(212, 175, 55, 0.15); border-color: #fff; }
 
-        /* --- Shopee Section --- */
+        /* --- Shopee --- */
         .shopee-section { padding: 20px; border-top: 1px dashed #444; margin-top: 20px; }
         .shopee-title { text-align: center; color: #d4af37; margin-bottom: 20px; font-size: 18px; }
         .shopee-grid { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; }
@@ -104,11 +87,8 @@
         .disclaimer { font-size: 11px; color: #888; margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 12px; text-align: left; line-height: 1.5; border: 1px solid #333; }
         .disclaimer strong { color: #d4af37; }
         
-        /* 小图点击样式 */
         .thumb-img { min-width: 80px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; }
         .thumb-img:hover { border-color: #d4af37; opacity: 0.8; }
-        .thumb-img:active { transform: scale(0.95); }
-        /* 相册容器 */
         .gallery-scroll { display: flex; overflow-x: auto; gap: 8px; padding: 10px; background: #222; }
     </style>
 </head>
@@ -121,11 +101,11 @@
         <p class="intro">Top 5 Hotels with EV Charging & Food Guide<br>自驾新山必看！自带充电桩 + 周边吃喝攻略</p>
 
         <div class="city-nav">
-            <span style="color: #d4af37; font-weight: bold; border-bottom: 2px solid #d4af37; padding-bottom: 3px; cursor: default;">Johor (JB)</span>
-            
-            <span style="color: #444; margin: 0 12px;">|</span>
-            
-            <a href="kl.html" style="color: #888; text-decoration: none;">Kuala Lumpur (KL)</a>
+            <a href="index.html" class="active-city">Johor (JB)</a>
+            <span style="color: #444;">|</span>
+            <a href="melaka.html">Melaka</a>
+            <span style="color: #444;">|</span>
+            <a href="kl.html">Kuala Lumpur (KL)</a>
         </div>
     </header>
 
@@ -158,11 +138,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/amari-johor-bahru/hotel/johor-bahru-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/amari-johor-bahru/hotel/johor-bahru-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/johor-bahru-hotel-detail-6467228/amari-johor-bahru/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/johor-bahru-hotel-detail-6582570/amari-johor-bahru/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -198,11 +178,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/city/johor-bahru-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/city/johor-bahru-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/johor-bahru-hotel-detail-82312993/st-giles-southkey-johor-bahru/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/johor-bahru-hotel-detail-82312993/st-giles-southkey-johor-bahru/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -236,11 +216,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/hard-rock-hotel-desaru-coast/hotel/desaru-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/hard-rock-hotel-desaru-coast/hotel/desaru-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/bandar-penawar-hotel-detail-20060783/hard-rock-hotel-desaru-coast/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/bandar-penawar-hotel-detail-20060783/hard-rock-hotel-desaru-coast/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -274,11 +254,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/sunway-hotel-big-box/hotel/johor-bahru-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/sunway-hotel-big-box/hotel/johor-bahru-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/nusajaya-hotel-detail-71949165/sunway-hotel-big-box/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/nusajaya-hotel-detail-71949165/sunway-hotel-big-box/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -313,11 +293,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/impiana-hotel-senai/hotel/johor-bahru-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/impiana-hotel-senai/hotel/johor-bahru-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/senai-hotel-detail-9543699/impiana-hotel-senai/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/senai-hotel-detail-9543699/impiana-hotel-senai/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -334,25 +314,25 @@
                 <div style="font-size: 24px;">🔌</div>
                 <p class="product-name">Type 2 Cable</p>
                 <p class="product-sub">充电线 (32A)</p>
-                <a href="https://s.shopee.com.my/6faxzRUTFE" class="shop-btn">View Shopee ➔</a>
+                <a href="https://s.shopee.com.my/6faxzRUTFE" target="_blank" class="shop-btn">View Shopee ➔</a>
             </div>
             <div class="product-card">
                 <div style="font-size: 24px;">🔋</div>
                 <p class="product-name">Extension Socket</p>
                 <p class="product-sub">酒店延长线</p>
-                <a href="https://s.shopee.com.my/9AIIyCzBbI" class="shop-btn">View Shopee ➔</a>
+                <a href="https://s.shopee.com.my/9AIIyCzBbI" target="_blank" class="shop-btn">View Shopee ➔</a>
             </div>
              <div class="product-card">
                 <div style="font-size: 24px;">📱</div>
                 <p class="product-name">Phone Holder</p>
                 <p class="product-sub">手机支架</p>
-                <a href="https://s.shopee.com.my/5L5aPQBROT" class="shop-btn">View Shopee ➔</a>
+                <a href="https://s.shopee.com.my/5L5aPQBROT" target="_blank" class="shop-btn">View Shopee ➔</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <p style="font-weight: bold; color: #d4af37;">© 2026 Johor EV Trip Guide</p>
+        <p style="font-weight: bold; color: #d4af37;">© 2026 Malaysia EV Trip Guide</p>
         <div class="disclaimer">
             <p style="margin-bottom: 5px;"><strong>⚠️ Disclaimer / 免责声明：</strong></p>
             <p>1. This site contains affiliate links (Agoda/Trip.com/Shopee). We may earn a small commission at no extra cost to you.<br>本站包含推广链接，博主会获得少量佣金，但绝不会增加您的费用。</p>
