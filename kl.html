@@ -28,8 +28,10 @@
 
         /* 城市导航 */
         .city-nav { margin-top: 25px; font-size: 14px; letter-spacing: 0.5px; padding-top: 15px; border-top: 1px solid #333; }
-        .city-nav a { transition: color 0.3s; }
-        .city-nav a:hover { color: #fff !important; }
+        .city-nav a { text-decoration: none; color: #888; transition: color 0.3s; margin: 0 8px; }
+        .city-nav a:hover { color: #fff; }
+        /* 当前页面高亮 */
+        .active-city { color: #d4af37 !important; font-weight: bold; border-bottom: 2px solid #d4af37; padding-bottom: 3px; }
 
         /* --- Hotel List --- */
         .hotel-list { padding: 30px 20px 10px; }
@@ -55,28 +57,12 @@
 
         /* --- Buttons (双按钮设计) --- */
         .btn-group { display: flex; gap: 10px; margin-top: 15px; }
-        
-        .btn { 
-            flex: 1; /* 平分宽度 */
-            padding: 10px 0; 
-            text-align: center; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 6px; 
-            transition: 0.3s; 
-            font-size: 13px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+        .btn { flex: 1; padding: 10px 0; text-align: center; text-decoration: none; font-weight: bold; border-radius: 6px; transition: 0.3s; font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .btn span { font-size: 10px; font-weight: normal; opacity: 0.8; margin-top: 2px; }
-
-        /* Agoda 样式 (金色实心) */
+        
         .btn-agoda { background: #d4af37; color: #000; border: 1px solid #d4af37; }
         .btn-agoda:hover { background: #fff; border-color: #fff; }
 
-        /* Trip.com 样式 (黑底金边) */
         .btn-trip { background: transparent; color: #fff; border: 1px solid #d4af37; }
         .btn-trip:hover { background: rgba(212, 175, 55, 0.15); border-color: #fff; }
 
@@ -113,9 +99,11 @@
         </p>
         
         <div class="city-nav">
-            <a href="index.html" style="color: #888; text-decoration: none;">Johor (JB)</a>
-            <span style="color: #444; margin: 0 12px;">|</span>
-            <span style="color: #d4af37; font-weight: bold; border-bottom: 2px solid #d4af37; padding-bottom: 3px; cursor: default;">Kuala Lumpur (KL)</span>
+            <a href="index.html">Johor (JB)</a>
+            <span style="color: #444;">|</span>
+            <a href="melaka.html">Melaka</a>
+            <span style="color: #444;">|</span>
+            <a href="kl.html" class="active-city">Kuala Lumpur (KL)</a>
         </div>
     </header>
 
@@ -151,11 +139,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/equatorial_2/hotel/kuala-lumpur-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/equatorial_2/hotel/kuala-lumpur-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-23510995/eq-kuala-lumpur/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-23510995/eq-kuala-lumpur/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -193,11 +181,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/mandarin-oriental-kuala-lumpur/hotel/kuala-lumpur-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/mandarin-oriental-kuala-lumpur/hotel/kuala-lumpur-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-1811110/mandarin-oriental-kuala-lumpur/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-1811110/mandarin-oriental-kuala-lumpur/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -234,11 +222,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/le-meridien-kuala-lumpur_16/hotel/kuala-lumpur-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/le-meridien-kuala-lumpur_16/hotel/kuala-lumpur-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/w/14mBYmcN6T2" class="btn btn-trip">
+                    <a href="https://www.trip.com/w/14mBYmcN6T2" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -275,11 +263,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/grand-hyatt-kuala-lumpur-hotel/hotel/kuala-lumpur-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/grand-hyatt-kuala-lumpur-hotel/hotel/kuala-lumpur-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-699766/grand-hyatt-kuala-lumpur/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-699766/grand-hyatt-kuala-lumpur/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -318,11 +306,11 @@
                 </div>
                 
                 <div class="btn-group">
-                    <a href="https://www.agoda.com/pavilion-hotel-kuala-lumpur-managed-by-banyan-tree/hotel/kuala-lumpur-my.html" class="btn btn-agoda">
+                    <a href="https://www.agoda.com/pavilion-hotel-kuala-lumpur-managed-by-banyan-tree/hotel/kuala-lumpur-my.html" target="_blank" class="btn btn-agoda">
                         Agoda
                         <span>Check Rates</span>
                     </a>
-                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-23971971/pavilion-hotel-kuala-lumpur-managed-by-banyan-tree/" class="btn btn-trip">
+                    <a href="https://www.trip.com/hotels/kuala-lumpur-hotel-detail-23971971/pavilion-hotel-kuala-lumpur-managed-by-banyan-tree/" target="_blank" class="btn btn-trip">
                         Trip.com
                         <span>Points & Deals</span>
                     </a>
@@ -339,19 +327,19 @@
                 <div style="font-size: 24px;">🔌</div>
                 <p class="product-name">Type 2 Cable</p>
                 <p class="product-sub">充电线 (32A)</p>
-                <a href="https://s.shopee.com.my/6faxzRUTFE" class="shop-btn">View Shopee ➔</a>
+                <a href="https://s.shopee.com.my/6faxzRUTFE" target="_blank" class="shop-btn">View Shopee ➔</a>
             </div>
             <div class="product-card">
                 <div style="font-size: 24px;">💳</div>
                 <p class="product-name">RFID Holder</p>
                 <p class="product-sub">TNG 卡套</p>
-                <a href="https://s.shopee.com.my/7fTZyntFC2" class="shop-btn">View Shopee ➔</a>
+                <a href="https://s.shopee.com.my/7fTZyntFC2" target="_blank" class="shop-btn">View Shopee ➔</a>
             </div>
              <div class="product-card">
                 <div style="font-size: 24px;">📦</div>
                 <p class="product-name">Car Organizer</p>
                 <p class="product-sub">后备箱收纳</p>
-                <a href="https://s.shopee.com.my/AUnlMCZHN4" class="shop-btn">View Shopee ➔</a>
+                <a href="https://s.shopee.com.my/AUnlMCZHN4" target="_blank" class="shop-btn">View Shopee ➔</a>
             </div>
         </div>
     </div>
