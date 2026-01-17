@@ -22,7 +22,11 @@
         
         /* --- Header --- */
         header { background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 40px 20px 30px; text-align: center; color: #d4af37; border-bottom: 2px solid #d4af37; }
-        h1 { margin: 0; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; color: #fff; }
+        
+        /* Logo 样式 */
+        .logo-container { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; }
+        .logo-text { font-family: sans-serif; font-weight: bold; font-size: 26px; letter-spacing: 0.5px; }
+
         .subtitle { font-size: 14px; color: #d4af37; margin-top: 5px; font-weight: 500; }
         .intro { font-size: 12px; color: #888; margin-top: 15px; line-height: 1.6; }
 
@@ -90,7 +94,14 @@
 
 <div class="container">
     <header>
-        <h1>⚡ KL EV Trip Guide</h1>
+        <div class="logo-container">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#00C853" stroke="#00C853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="logo-text">
+                <span style="color: #00C853;">Go</span><span style="color: #2962FF;">EV</span><span style="color: #ffffff;">Malaysia</span>
+            </div>
+        </div>
         <p class="subtitle">吉隆坡 · 充电无忧之旅</p>
         
         <p class="intro">
@@ -345,7 +356,7 @@
     </div>
 
     <footer>
-        <p style="font-weight: bold; color: #d4af37;">© 2026 Malaysia EV Trip Guide</p>
+        <p style="font-weight: bold; color: #d4af37;">© 2026 Go EV Malaysia</p>
         <div class="disclaimer">
             <p style="margin-bottom: 5px;"><strong>⚠️ Disclaimer / 免责声明：</strong></p>
             <p>1. This site contains affiliate links (Agoda/Trip.com/Shopee). We may earn a small commission at no extra cost to you.<br>本站包含推广链接，博主会获得少量佣金，但绝不会增加您的费用。</p>
