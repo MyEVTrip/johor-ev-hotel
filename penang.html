@@ -116,6 +116,7 @@
             <span style="color: #444;">|</span>
             <a href="kl.html">Kuala Lumpur (KL)</a>
             <span style="color: #444;">|</span>
+            <a href="ipoh.html">Ipoh</a> <span style="color: #444;">|</span>
             <a href="penang.html" class="active-city">Penang</a>
         </div>
     </header>
@@ -350,22 +351,18 @@
         const img = e.target;
         const src = img.src;
         
-        // 1. 如果是 .jpg 挂了，试一下 .jpeg
+        // 自动尝试 .jpeg, .JPG, .png
         if (src.endsWith('.jpg') && !img.dataset.triedJpeg) {
-            img.dataset.triedJpeg = "true"; // 标记已试过，防止死循环
+            img.dataset.triedJpeg = "true";
             img.src = src.replace('.jpg', '.jpeg');
-        } 
-        // 2. 如果 .jpeg 也挂了，试一下 .JPG (大写)
-        else if (src.endsWith('.jpeg') && !img.dataset.triedUpper) {
+        } else if (src.endsWith('.jpeg') && !img.dataset.triedUpper) {
             img.dataset.triedUpper = "true";
             img.src = src.replace('.jpeg', '.JPG');
-        }
-        // 3. 还是不行？试一下 .png (万一呢)
-        else if (src.endsWith('.JPG') && !img.dataset.triedPng) {
+        } else if (src.endsWith('.JPG') && !img.dataset.triedPng) {
             img.dataset.triedPng = "true";
             img.src = src.replace('.JPG', '.png');
         }
-    }, true); // 使用捕获模式，确保能抓到 error 事件
+    }, true);
 </script>
 
 </body>
