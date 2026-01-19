@@ -24,7 +24,7 @@
     <meta property="og:type" content="article">
     
     <style>
-        /* --- Dark Luxury Theme (保持一致) --- */
+        /* --- Dark Luxury Theme --- */
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #1a1a1a; color: #ccc; margin: 0; padding: 0; line-height: 1.6; }
         .container { max-width: 640px; margin: 0 auto; background: #242424; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
         
@@ -41,7 +41,6 @@
         .city-nav { margin-top: 25px; font-size: 14px; letter-spacing: 0.5px; padding-top: 15px; border-top: 1px solid #333; }
         .city-nav a { text-decoration: none; color: #888; transition: color 0.3s; margin: 0 8px; }
         .city-nav a:hover { color: #fff; }
-        /* 当前页面高亮 */
         .active-city { color: #d4af37 !important; font-weight: bold; border-bottom: 2px solid #d4af37; padding-bottom: 3px; }
 
         /* --- Hotel List --- */
@@ -129,6 +128,8 @@
                 <img src="ghotel.jpg" class="thumb-img" onclick="document.getElementById('ghotel-main').src=this.src">
                 <img src="ghotel1.jpg" class="thumb-img" onclick="document.getElementById('ghotel-main').src=this.src">
                 <img src="ghotel2.jpg" class="thumb-img" onclick="document.getElementById('ghotel-main').src=this.src">
+                <img src="ghotel3.jpg" class="thumb-img" onclick="document.getElementById('ghotel-main').src=this.src">
+                <img src="ghotel4.jpg" class="thumb-img" onclick="document.getElementById('ghotel-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>1. G Hotel Gurney</h3>
@@ -164,6 +165,8 @@
                 <img src="angsana.jpg" class="thumb-img" onclick="document.getElementById('angsana-main').src=this.src">
                 <img src="angsana1.jpg" class="thumb-img" onclick="document.getElementById('angsana-main').src=this.src">
                 <img src="angsana2.jpg" class="thumb-img" onclick="document.getElementById('angsana-main').src=this.src">
+                <img src="angsana3.jpg" class="thumb-img" onclick="document.getElementById('angsana-main').src=this.src">
+                <img src="angsana4.jpg" class="thumb-img" onclick="document.getElementById('angsana-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>2. Angsana Teluk Bahang</h3>
@@ -198,6 +201,9 @@
             <div class="gallery-scroll">
                 <img src="hardrockpg.jpg" class="thumb-img" onclick="document.getElementById('hardrockpg-main').src=this.src">
                 <img src="hardrockpg1.jpg" class="thumb-img" onclick="document.getElementById('hardrockpg-main').src=this.src">
+                <img src="hardrockpg2.jpg" class="thumb-img" onclick="document.getElementById('hardrockpg-main').src=this.src">
+                <img src="hardrockpg3.jpg" class="thumb-img" onclick="document.getElementById('hardrockpg-main').src=this.src">
+                <img src="hardrockpg4.jpg" class="thumb-img" onclick="document.getElementById('hardrockpg-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>3. Hard Rock Hotel Penang</h3>
@@ -232,6 +238,9 @@
             <div class="gallery-scroll">
                 <img src="prestige.jpg" class="thumb-img" onclick="document.getElementById('prestige-main').src=this.src">
                 <img src="prestige1.jpg" class="thumb-img" onclick="document.getElementById('prestige-main').src=this.src">
+                <img src="prestige2.jpg" class="thumb-img" onclick="document.getElementById('prestige-main').src=this.src">
+                <img src="prestige3.jpg" class="thumb-img" onclick="document.getElementById('prestige-main').src=this.src">
+                <img src="prestige4.jpg" class="thumb-img" onclick="document.getElementById('prestige-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>4. The Prestige Hotel</h3>
@@ -266,6 +275,9 @@
             <div class="gallery-scroll">
                 <img src="amarispice.jpg" class="thumb-img" onclick="document.getElementById('amarispice-main').src=this.src">
                 <img src="amarispice1.jpg" class="thumb-img" onclick="document.getElementById('amarispice-main').src=this.src">
+                <img src="amarispice2.jpg" class="thumb-img" onclick="document.getElementById('amarispice-main').src=this.src">
+                <img src="amarispice3.jpg" class="thumb-img" onclick="document.getElementById('amarispice-main').src=this.src">
+                <img src="amarispice4.jpg" class="thumb-img" onclick="document.getElementById('amarispice-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>5. Amari SPICE Penang</h3>
@@ -330,6 +342,31 @@
         </div>
     </footer>
 </div>
+
+<script>
+    document.addEventListener('error', function(e) {
+        if (e.target.tagName !== 'IMG') return;
+        
+        const img = e.target;
+        const src = img.src;
+        
+        // 1. 如果是 .jpg 挂了，试一下 .jpeg
+        if (src.endsWith('.jpg') && !img.dataset.triedJpeg) {
+            img.dataset.triedJpeg = "true"; // 标记已试过，防止死循环
+            img.src = src.replace('.jpg', '.jpeg');
+        } 
+        // 2. 如果 .jpeg 也挂了，试一下 .JPG (大写)
+        else if (src.endsWith('.jpeg') && !img.dataset.triedUpper) {
+            img.dataset.triedUpper = "true";
+            img.src = src.replace('.jpeg', '.JPG');
+        }
+        // 3. 还是不行？试一下 .png (万一呢)
+        else if (src.endsWith('.JPG') && !img.dataset.triedPng) {
+            img.dataset.triedPng = "true";
+            img.src = src.replace('.JPG', '.png');
+        }
+    }, true); // 使用捕获模式，确保能抓到 error 事件
+</script>
 
 </body>
 </html>
