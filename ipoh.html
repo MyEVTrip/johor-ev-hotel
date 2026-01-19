@@ -92,6 +92,8 @@
         
         .thumb-img { min-width: 80px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; }
         .thumb-img:hover { border-color: #d4af37; opacity: 0.8; }
+        /* 隐藏坏图的样式 (兜底) */
+        .thumb-img[style*="display: none"] { display: none !important; }
         .gallery-scroll { display: flex; overflow-x: auto; gap: 8px; padding: 10px; background: #222; }
     </style>
 </head>
@@ -132,6 +134,11 @@
                 <img src="banjaran1.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
                 <img src="banjaran2.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
                 <img src="banjaran3.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
+                <img src="banjaran4.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
+                <img src="banjaran5.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
+                <img src="banjaran6.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
+                <img src="banjaran7.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
+                <img src="banjaran8.jpg" class="thumb-img" onclick="document.getElementById('banjaran-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>1. The Banjaran Hotsprings Retreat</h3>
@@ -168,6 +175,11 @@
                 <img src="thehaven1.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
                 <img src="thehaven2.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
                 <img src="thehaven3.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
+                <img src="thehaven4.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
+                <img src="thehaven5.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
+                <img src="thehaven6.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
+                <img src="thehaven7.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
+                <img src="thehaven8.jpg" class="thumb-img" onclick="document.getElementById('thehaven-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>2. The Haven All Suite Resort</h3>
@@ -204,6 +216,11 @@
                 <img src="weil1.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
                 <img src="weil2.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
                 <img src="weil3.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
+                <img src="weil4.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
+                <img src="weil5.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
+                <img src="weil6.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
+                <img src="weil7.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
+                <img src="weil8.jpg" class="thumb-img" onclick="document.getElementById('weil-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>3. Weil Hotel</h3>
@@ -240,6 +257,11 @@
                 <img src="mroof1.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
                 <img src="mroof2.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
                 <img src="mroof3.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
+                <img src="mroof4.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
+                <img src="mroof5.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
+                <img src="mroof6.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
+                <img src="mroof7.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
+                <img src="mroof8.jpg" class="thumb-img" onclick="document.getElementById('mroof-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>4. M Roof Hotel & Residences</h3>
@@ -276,6 +298,11 @@
                 <img src="regalodge1.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
                 <img src="regalodge2.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
                 <img src="regalodge3.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
+                <img src="regalodge4.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
+                <img src="regalodge5.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
+                <img src="regalodge6.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
+                <img src="regalodge7.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
+                <img src="regalodge8.jpg" class="thumb-img" onclick="document.getElementById('regalodge-main').src=this.src">
             </div>
             <div class="card-body">
                 <h3>5. Regalodge Hotel</h3>
@@ -348,9 +375,15 @@
         const img = e.target;
         const src = img.src;
         
-        // 自动尝试 .jpeg, .JPG, .png
-        if (src.endsWith('.jpg') && !img.dataset.triedJpeg) {
-            img.dataset.triedJpeg = "true";
+        // 标记：如果所有格式都试过了，就隐藏它
+        if (img.dataset.failedOnce && img.dataset.triedUpper && img.dataset.triedPng) {
+            img.style.display = 'none'; // 彻底隐藏
+            return;
+        }
+
+        // 尝试修复逻辑
+        if (src.endsWith('.jpg') && !img.dataset.failedOnce) {
+            img.dataset.failedOnce = "true";
             img.src = src.replace('.jpg', '.jpeg');
         } else if (src.endsWith('.jpeg') && !img.dataset.triedUpper) {
             img.dataset.triedUpper = "true";
@@ -358,6 +391,9 @@
         } else if (src.endsWith('.JPG') && !img.dataset.triedPng) {
             img.dataset.triedPng = "true";
             img.src = src.replace('.JPG', '.png');
+        } else {
+            // 如果都不行，隐藏图片
+            img.style.display = 'none';
         }
     }, true);
 </script>
