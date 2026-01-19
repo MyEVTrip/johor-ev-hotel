@@ -118,6 +118,7 @@
             <span style="color: #444;">|</span>
             <a href="kl.html">Kuala Lumpur (KL)</a>
             <span style="color: #444;">|</span>
+            <a href="ipoh.html">Ipoh</a> <span style="color: #444;">|</span>
             <a href="penang.html">Penang</a>
         </div>
     </header>
@@ -353,6 +354,27 @@
         </div>
     </footer>
 </div>
+
+<script>
+    document.addEventListener('error', function(e) {
+        if (e.target.tagName !== 'IMG') return;
+        
+        const img = e.target;
+        const src = img.src;
+        
+        // 自动尝试 .jpeg, .JPG, .png
+        if (src.endsWith('.jpg') && !img.dataset.triedJpeg) {
+            img.dataset.triedJpeg = "true";
+            img.src = src.replace('.jpg', '.jpeg');
+        } else if (src.endsWith('.jpeg') && !img.dataset.triedUpper) {
+            img.dataset.triedUpper = "true";
+            img.src = src.replace('.jpeg', '.JPG');
+        } else if (src.endsWith('.JPG') && !img.dataset.triedPng) {
+            img.dataset.triedPng = "true";
+            img.src = src.replace('.JPG', '.png');
+        }
+    }, true);
+</script>
 
 </body>
 </html>
