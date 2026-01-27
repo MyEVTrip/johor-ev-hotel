@@ -34,7 +34,7 @@
     <style>
         /* --- Dark Luxury Theme (黑金风) --- */
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #1a1a1a; color: #ccc; margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 640px; margin: 0 auto; background: #242424; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .container { max-width: 640px; margin: 0 auto; background: #242424; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.5); position: relative; }
         
         /* --- Header --- */
         header { background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 40px 20px 30px; text-align: center; color: #d4af37; border-bottom: 2px solid #d4af37; }
@@ -102,6 +102,44 @@
         .thumb-img { min-width: 80px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; }
         .thumb-img:hover { border-color: #d4af37; opacity: 0.8; }
         .gallery-scroll { display: flex; overflow-x: auto; gap: 8px; padding: 10px; background: #222; }
+
+        /* --- 🔥 新增：悬浮带货按钮样式 --- */
+        .floating-shop-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #d4af37; /* 金色背景，匹配你的黑金主题 */
+            color: #000;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); /* 金色阴影 */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 9999;
+            transition: transform 0.3s ease, background 0.3s;
+            border: 2px solid #d4af37;
+        }
+
+        .floating-shop-btn:hover {
+            transform: translateY(-3px);
+            background-color: #fff; /* 鼠标悬停变白色 */
+            border-color: #fff;
+        }
+
+        .floating-shop-btn .icon { font-size: 1.2rem; }
+        .floating-shop-btn .text { font-weight: bold; font-size: 0.95rem; font-family: sans-serif; }
+
+        /* 手机端适配：按钮稍微小一点，避免挡住内容 */
+        @media (max-width: 600px) {
+            .floating-shop-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 15px;
+            }
+            .floating-shop-btn .text { font-size: 0.85rem; }
+        }
     </style>
 </head>
 <body>
@@ -117,7 +155,7 @@
             </div>
         </div>
         <p class="subtitle">柔佛新山 · 充电无忧之旅</p>
-        <p class="intro">Top 5 Hotels with EV Charging & Food Guide<br>自驾新山必看！自带充电桩 + 周边吃喝攻略</p>
+        <p class="intro">Top 5 Hotels in JB with EV Charging & Food Guide<br>自驾新山必看！自带充电桩 + 周边吃喝攻略</p>
 
         <div class="city-nav">
             <a href="index.html" class="active-city">Johor (JB)</a>
@@ -128,6 +166,8 @@
             <span style="color: #444;">|</span>
             <a href="ipoh.html">Ipoh</a> <span style="color: #444;">|</span>
             <a href="penang.html">Penang</a>
+            <span style="color: #444;">|</span>
+            <a href="gear.html" style="color: #d4af37;">Shop 🛍️</a>
         </div>
     </header>
 
@@ -361,6 +401,12 @@
             <p>2. We are not responsible for bookings or product quality. Please contact official stores for support.<br>本站仅做分享，所有售后服务均由 Agoda/Trip.com/Shopee 官方负责。</p>
         </div>
     </footer>
+
+    <a href="gear.html" class="floating-shop-btn">
+        <span class="icon">🛍️</span>
+        <span class="text">EV 必买好物</span>
+    </a>
+
 </div>
 
 <script>
