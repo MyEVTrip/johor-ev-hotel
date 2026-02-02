@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Top EV Accessories Malaysia 2026 | Tesla, BYD & ORA Gear Shop</title>
+    <meta name="description" content="Best accessories for BYD Atto 3, Tesla Model Y & ORA Good Cat in Malaysia. Owner-tested reviews: 70mai Dashcam, Trapo Mats, Baseus Vacuum & CarPlay AI Box.">
+    <meta name="keywords" content="EV accessories Malaysia, BYD Atto 3 phone holder, Tesla Model Y accessories, car vacuum review, Trapo car mats, 70mai dashcam, Go EV Malaysia shop">
+    <meta name="author" content="Go EV Malaysia">
+    
+    <meta property="og:title" content="Must-Have EV Accessories for Malaysian Drivers (2026 Edition)">
+    <meta property="og:description" content="Don't buy random gadgets! Here are the Top 10 items every Tesla & BYD owner needs. Verified by owners.">
+    <meta property="og:image" content="images/vacuum.jpg">
+    <meta property="og:type" content="product">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9J95JTMKSZ"></script> 
     <script> 
       window.dataLayer = window.dataLayer || []; 
@@ -18,252 +31,327 @@
       })();
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Top EV Accessories Malaysia: BYD Atto 3, Tesla Model Y & Road Trip Gear | 自驾神器推荐</title>
-    
-    <meta name="description" content="Looking for the best car accessories for BYD Atto 3 or Tesla Model Y? We tested top-rated neck pillows, phone holders, and vacuums from TikTok Shop Malaysia. 实测大马电车必备神器。">
-    <meta name="keywords" content="BYD Atto 3 accessories Malaysia, Tesla Model Y gear, car vacuum review, EV road trip essentials, phone holder round vent, Go EV Malaysia shop">
-
     <style>
-        /* --- Dark Luxury Theme (黑金风 - 与首页保持一致) --- */
+        /* --- 🎨 黑金主题样式 (Dark Luxury) --- */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #1a1a1a;
             color: #ccc;
             margin: 0; padding: 0;
-            line-height: 1.6;
+            padding-bottom: 60px; /* 底部留白 */
         }
 
-        /* 导航栏 */
+        /* 顶部导航 */
         .navbar {
             background: linear-gradient(135deg, #000000 0%, #333333 100%);
-            padding: 20px;
+            padding: 15px 20px;
             border-bottom: 2px solid #d4af37;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo { font-weight: bold; font-size: 1.2rem; color: #fff; text-decoration: none; }
-        .back-link { font-size: 0.9rem; color: #d4af37; text-decoration: none; border: 1px solid #d4af37; padding: 5px 10px; border-radius: 4px; }
+        .logo { font-weight: bold; font-size: 1.1rem; color: #fff; text-decoration: none; }
+        .back-link { color: #d4af37; text-decoration: none; font-size: 0.85rem; border: 1px solid #d4af37; padding: 4px 10px; border-radius: 4px; }
 
         /* 头部文案 */
-        .shop-header {
-            text-align: center; padding: 40px 20px; background: #242424;
-        }
-        .shop-header h1 { margin: 0; font-size: 1.8rem; color: #d4af37; }
-        .shop-header p { max-width: 700px; margin: 15px auto 0; font-size: 0.95rem; color: #999; }
+        header { text-align: center; padding: 30px 20px 10px; background: #242424; }
+        header h1 { margin: 0; color: #d4af37; font-size: 1.6rem; }
+        header p { margin: 10px 0; font-size: 0.9rem; color: #888; line-height: 1.4; }
+        
+        /* SEO 文字块 (仅在大屏幕显示更多) */
+        .seo-text { max-width: 800px; margin: 0 auto; font-size: 0.85rem; color: #666; display: none; }
+        @media (min-width: 768px) { .seo-text { display: block; } }
 
-        /* 商品网格 */
-        .product-container {
-            max-width: 800px; /* 限制宽度，更像手机阅读体验 */
-            margin: 30px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr; /* 手机单列，电脑也是单列流 (类似 Blog) */
-            gap: 30px;
+        /* --- 🛠️ 悬浮搜索 & 导航栏 (核心功能) --- */
+        .control-panel {
+            position: sticky; /* 钉在顶部 */
+            top: 0;
+            background: #1a1a1a;
+            padding: 15px 15px 10px;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
-        /* --- 商品评测卡片 (核心) --- */
+        /* 搜索框 */
+        #searchInput {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #2d2d2d;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            outline: none;
+            box-sizing: border-box; 
+        }
+        #searchInput:focus { border-color: #d4af37; }
+
+        /* 分类按钮条 */
+        .category-scroll {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+            scrollbar-width: none; /* 隐藏滚动条 */
+        }
+        .category-scroll::-webkit-scrollbar { display: none; }
+
+        .cat-pill {
+            background: #333;
+            color: #ccc;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            white-space: nowrap;
+            border: 1px solid #444;
+            transition: 0.2s;
+        }
+        .cat-pill:hover, .cat-pill:active { background: #d4af37; color: #000; font-weight: bold; }
+
+        /* --- 📦 商品列表容器 --- */
+        .product-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 分类标题 */
+        .section-title {
+            color: #d4af37;
+            margin: 30px 0 15px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* --- 📱 Amazon 风格紧凑卡片 (左图右文) --- */
         .product-card {
             background: #2d2d2d;
-            border-radius: 12px;
-            overflow: hidden;
             border: 1px solid #333;
-            transition: transform 0.3s;
-        }
-        .product-card:hover {
-            border-color: #d4af37;
-            transform: translateY(-5px);
-        }
-
-        .card-img-top {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            filter: brightness(0.95);
-        }
-
-        .card-body { padding: 25px; }
-
-        /* 标签栏 */
-        .meta-row { display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center; }
-        .tag { background: #d4af37; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
-        .rating { color: #f1c40f; font-weight: bold; font-size: 0.9rem; }
-
-        /* 标题 */
-        .card-title { font-size: 1.4rem; margin: 0 0 5px 0; color: #fff; }
-        .card-subtitle { color: #888; font-size: 0.95rem; margin-bottom: 20px; }
-
-        /* --- 小编实测区 (Review Box) --- */
-        .review-box {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 3px solid #d4af37;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-        .review-title { color: #d4af37; font-weight: bold; display: block; margin-bottom: 8px; font-size: 0.95rem; }
-        .review-text { color: #ccc; font-size: 0.95rem; margin: 0; }
-        .review-highlight { color: #fff; font-weight: 500; }
-
-        /* 优缺点列表 */
-        .pros-cons { display: flex; gap: 15px; margin-bottom: 25px; font-size: 0.85rem; }
-        .pc-col { flex: 1; }
-        .pc-title { font-weight: bold; display: block; margin-bottom: 5px; }
-        .pc-list { margin: 0; padding-left: 15px; color: #999; }
-        .pc-list li { margin-bottom: 4px; }
-
-        /* 购买按钮 */
-        .btn-buy {
-            display: block;
-            width: 100%;
-            padding: 14px 0;
-            background: #d4af37; /* 金色按钮 */
-            color: #000;
-            text-align: center;
-            text-decoration: none;
             border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background 0.2s;
+            display: flex; /* 让图片和文字并排 */
+            overflow: hidden;
+            height: 150px; /* 固定高度，非常整齐 */
+            margin-bottom: 15px;
+            transition: transform 0.2s;
         }
-        .btn-buy:hover {
-            background: #fff; /* 悬停变白 */
+        
+        /* 左图 (占35%) */
+        .card-img {
+            width: 35%;
+            height: 100%;
+            object-fit: cover;
+            background: #000;
         }
 
-        /* 底部 */
-        footer {
-            text-align: center; padding: 40px 20px; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 40px;
+        /* 右文 (占65%) */
+        .card-body {
+            width: 65%;
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
+        .card-title {
+            font-size: 0.95rem;
+            color: #fff;
+            margin: 0 0 4px 0;
+            line-height: 1.3;
+            /* 限制标题最多2行 */
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+
+        /* 小编实测精华版 */
+        .mini-review {
+            font-size: 0.75rem;
+            color: #bbb;
+            background: rgba(212, 175, 55, 0.08);
+            padding: 5px 8px;
+            border-radius: 4px;
+            border-left: 2px solid #d4af37;
+            line-height: 1.3;
+            /* 限制点评最多3行 */
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
+
+        .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 5px; }
+        .rating { color: #f1c40f; font-size: 0.75rem; font-weight: bold; }
+        
+        /* 购买按钮 */
+        .btn-buy-small {
+            background: #d4af37; color: #000;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .btn-buy-small:hover { background: #fff; }
+
+        footer { text-align: center; padding: 30px; color: #666; font-size: 0.8rem; margin-top: 30px; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="logo">
-            <span style="color: #00C853;">Go</span><span style="color: #2962FF;">EV</span> <span style="font-size: 0.9rem; color:#ccc;">Shop</span>
-        </a>
+        <a href="index.html" class="logo">⚡ Go EV Shop</a>
         <a href="index.html" class="back-link">← Back Home</a>
     </nav>
 
-    <header class="shop-header">
-        <h1>🚗 EV Driver's Gear</h1>
-        <p>
-            Essential accessories for <strong>Tesla Model Y</strong>, <strong>BYD Atto 3</strong> & Road Trips.
-            <br>
-            <span style="color: #666;">大马电车车主实测 · 拒绝踩雷 · TikTok 爆款精选</span>
+    <header>
+        <h1>EV Driver's Essentials</h1>
+        <p>Tested by Owners. High Quality Only.<br>车主实测 · 严选好物</p>
+        <p class="seo-text">
+            Welcome to the ultimate EV accessories guide for Malaysia. Whether you drive a <strong>BYD Atto 3, Dolphin, Tesla Model Y</strong> or <strong>ORA Good Cat</strong>, find the best gear here.
         </p>
     </header>
 
-    <div class="product-container">
+    <div class="control-panel">
+        <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="🔍 Search product... (e.g. Vacuum, BYD)">
+        <div class="category-scroll">
+            <a href="#electronics" class="cat-pill">⚡ Electronics</a>
+            <a href="#cleaning" class="cat-pill">🧼 Cleaning</a>
+            <a href="#interior" class="cat-pill">🛋️ Interior</a>
+        </div>
+    </div>
+
+    <div class="product-wrapper">
+
+        <h2 id="electronics" class="section-title">⚡ Electronics & Gadgets</h2>
 
         <div class="product-card">
-            <img src="images/vacuum.jpg" alt="Baseus A3 Car Vacuum Review" class="card-img-top">
-            
+            <img src="images/dashcam.jpg" alt="70mai A810 4K Dashcam for EV" class="card-img">
             <div class="card-body">
-                <div class="meta-row">
-                    <span class="tag">🏆 #1 Best Seller</span>
-                    <span class="rating">★★★★★ 4.9/5</span>
-                </div>
-
-                <h3 class="card-title">Baseus A3 Car Vacuum</h3>
-                <p class="card-subtitle">倍思 A3 强力吸尘器 | Tesla Model Y 门板完美适配</p>
-
-                <div class="review-box">
-                    <span class="review-title">👨‍💻 Editor's Review (小编实测):</span>
-                    <p class="review-text">
-                        很多车友问我 <strong>Model Y/3 那个窄窄的门板</strong> 能放什么吸尘器？市面上 90% 的都放不进，但这款刚好！
-                        <br><br>
-                        <span class="review-highlight">实测体验：</span> 吸力有 15000Pa，吸脚垫上的沙子和零食碎屑完全没问题。Type-C 接口直接插车上就能充，不用担心没电。
-                    </p>
-                </div>
-
-                <div class="pros-cons">
-                    <div class="pc-col">
-                        <span class="pc-title" style="color: #00C853;">✅ Pros (优点)</span>
-                        <ul class="pc-list">
-                            <li>Compact Size (极小，不占位)</li>
-                            <li>High Suction (吸力同级最强)</li>
-                        </ul>
-                    </div>
-                    <div class="pc-col">
-                        <span class="pc-title" style="color: #ff5252;">❌ Cons (缺点)</span>
-                        <ul class="pc-list">
-                            <li>Small dust bin (尘盒较小)</li>
-                            <li>Pricey (小贵但值得)</li>
-                        </ul>
+                <div>
+                    <h3 class="card-title">70mai A810 4K HDR Dashcam</h3>
+                    <div class="mini-review">
+                        <strong>小编实测：</strong>EV 车加速快，必须要有 4K 记录仪防身。这款夜视效果无敌，晚上车牌拍得清清楚楚。
                     </div>
                 </div>
-
-                <a href="https://invol.co/clxxxx" target="_blank" class="btn-buy">
-                    Check Price on TikTok ➜
-                </a>
+                <div class="card-footer">
+                    <span class="rating">★ 4.9/5</span>
+                    <a href="YOUR_LINK_HERE" target="_blank" class="btn-buy-small">Check Price ➜</a>
+                </div>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="images/holder.jpg" alt="Gravity Phone Holder BYD" class="card-img-top">
-            
+            <img src="images/carplay.jpg" alt="CarPlay AI Box Netflix YouTube" class="card-img">
             <div class="card-body">
-                <div class="meta-row">
-                    <span class="tag">🚗 BYD Owner's Pick</span>
-                    <span class="rating">★★★★☆ 4.8/5</span>
+                <div>
+                    <h3 class="card-title">CarPlay AI Box (Netflix/YouTube)</h3>
+                    <div class="mini-review">
+                        <strong>小编实测：</strong>充电等待时的神器！插上去车机屏幕就能看 YouTube 和 Netflix，小孩在车上瞬间安静。
+                    </div>
                 </div>
-
-                <h3 class="card-title">Gravity Phone Holder</h3>
-                <p class="card-subtitle">重力感应支架 | 专治 BYD Atto 3 圆形出风口</p>
-
-                <div class="review-box">
-                    <span class="review-title">👨‍💻 Editor's Review (小编实测):</span>
-                    <p class="review-text">
-                        <strong>BYD Atto 3 和欧拉好猫</strong> 车主最头痛的就是“圆形出风口”很难买支架，普通的夹不住会掉。
-                        <br><br>
-                        <span class="review-highlight">实测体验：</span> 这款是用钩子勾住出风口叶片的，非常稳！过减速带手机也不会晃。单手放手机很顺滑。
-                    </p>
+                <div class="card-footer">
+                    <span class="rating">★ 4.8/5</span>
+                    <a href="YOUR_LINK_HERE" target="_blank" class="btn-buy-small">Check Price ➜</a>
                 </div>
+            </div>
+        </div>
 
-                <a href="https://invol.co/clxxxx" target="_blank" class="btn-buy">
-                    Check Price on TikTok ➜
-                </a>
+        <h2 id="cleaning" class="section-title">🧼 Cleaning & Care</h2>
+
+        <div class="product-card">
+            <img src="images/vacuum.jpg" alt="Baseus A3 Car Vacuum 15000Pa" class="card-img">
+            <div class="card-body">
+                <div>
+                    <h3 class="card-title">Baseus A3 Car Vacuum (15000Pa)</h3>
+                    <div class="mini-review">
+                        <strong>小编实测：</strong>完美塞进 Model Y 门板储物格。吸力超大，Type-C 直充，目前最好用的 EV 吸尘器。
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="rating">★ 4.9/5</span>
+                    <a href="https://invl.me/cln7gs6" target="_blank" class="btn-buy-small">Check Price ➜</a>
+                </div>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="images/pillow.jpg" alt="Memory Foam Neck Pillow" class="card-img-top">
-            
+            <img src="images/trapo.jpg" alt="Trapo Hex Ultimate Car Mats" class="card-img">
             <div class="card-body">
-                <div class="meta-row">
-                    <span class="tag">😴 Road Trip Hero</span>
-                    <span class="rating">★★★★☆ 4.7/5</span>
+                <div>
+                    <h3 class="card-title">Trapo Hex Ultimate Car Mats</h3>
+                    <div class="mini-review">
+                        <strong>小编实测：</strong>很多 BYD 车主提车第一件事就是换这个。防水好洗，不发臭，颜值比原厂高太多。
+                    </div>
                 </div>
-
-                <h3 class="card-title">Memory Foam Neck Pillow</h3>
-                <p class="card-subtitle">记忆棉透气头枕 | 长途驾驶救星</p>
-
-                <div class="review-box">
-                    <span class="review-title">👨‍💻 Editor's Review (小编实测):</span>
-                    <p class="review-text">
-                        电车的运动座椅通常比较硬，头枕位置也是向前凸的，开超过 2 小时脖子会悬空很酸。
-                        <br><br>
-                        <span class="review-highlight">实测体验：</span> 这个枕头不是那种软趴趴的棉花，是记忆棉，支撑性很好。去 Penang 或 KL 的路上全靠它续命。
-                    </p>
+                <div class="card-footer">
+                    <span class="rating">★ 5.0/5</span>
+                    <a href="YOUR_LINK_HERE" target="_blank" class="btn-buy-small">Check Price ➜</a>
                 </div>
+            </div>
+        </div>
 
-                <a href="https://invol.co/clxxxx" target="_blank" class="btn-buy">
-                    Check Price on TikTok ➜
-                </a>
+        <h2 id="interior" class="section-title">🛋️ Comfort & Interior</h2>
+
+        <div class="product-card">
+            <img src="images/holder.jpg" alt="Gravity Phone Holder BYD Atto 3" class="card-img">
+            <div class="card-body">
+                <div>
+                    <h3 class="card-title">Gravity Phone Holder (Round Vent)</h3>
+                    <div class="mini-review">
+                        <strong>小编实测：</strong>专治 BYD Atto 3 圆形出风口。钩子结构非常稳，过路墩手机不会掉，单手取放很顺。
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="rating">★ 4.8/5</span>
+                    <a href="YOUR_LINK_HERE" target="_blank" class="btn-buy-small">Check Price ➜</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/pillow.jpg" alt="Memory Foam Neck Pillow" class="card-img">
+            <div class="card-body">
+                <div>
+                    <h3 class="card-title">Memory Foam Neck Pillow</h3>
+                    <div class="mini-review">
+                        <strong>小编实测：</strong>跑长途必备。电车运动座椅偏硬，这个记忆棉枕头刚好填补脖子的空隙，开 4 小时也不累。
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="rating">★ 4.7/5</span>
+                    <a href="YOUR_LINK_HERE" target="_blank" class="btn-buy-small">Check Price ➜</a>
+                </div>
             </div>
         </div>
 
     </div>
 
     <footer>
-        <p>Go EV Malaysia participates in the TikTok Shop Affiliate Program.</p>
-        <p>
-            Disclaimer: We may earn a small commission at no extra cost to you. <br>
-            免责声明：本页包含推广链接，博主会获得少量佣金以维持网站运营。
-        </p>
+        <p>Go EV Malaysia participates in TikTok Shop Affiliate Program.</p>
+        <p style="opacity:0.6;">Disclaimer: We earn commissions from qualifying purchases.</p>
     </footer>
+
+    <script>
+        function searchFunction() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var container = document.querySelector(".product-wrapper");
+            var cards = container.getElementsByClassName("product-card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var title = cards[i].querySelector(".card-title");
+                var review = cards[i].querySelector(".mini-review"); 
+                
+                // 同时搜标题和评论里的字
+                var txtValue = (title.textContent || title.innerText) + " " + (review.textContent || review.innerText);
+                
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "flex"; // 显示
+                } else {
+                    cards[i].style.display = "none"; // 隐藏
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
